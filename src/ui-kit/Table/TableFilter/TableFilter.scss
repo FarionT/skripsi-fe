@@ -1,0 +1,57 @@
+@import 'ui-kit/styles';
+
+.conciseTableFilter {
+  @include themify($themes) {
+    svg path {
+      fill: themed('textColor');
+    }
+  }
+
+  &Content {
+    padding: 32px 0;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    @include min-width(small) {
+
+    }
+    @include min-width(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include min-width(large) {
+
+    }
+    &Left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @include min-width(small) {
+
+      }
+      @include min-width(medium) {
+        flex-direction: row;
+      }
+      @include min-width(large) {
+
+      }
+    }
+    &Button {
+      justify-content: start;
+      @include min-width(medium) {
+        justify-content: right;
+      }
+    }
+
+    .FormField {
+      flex-direction: row;
+      &-InputWrapper {
+        width: 200px;
+      }
+      &-Label {
+        @include inter-14-regular;
+      }
+    }
+  }
+}

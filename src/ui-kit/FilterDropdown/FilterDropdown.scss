@@ -1,0 +1,192 @@
+@import 'ui-kit/styles';
+
+.filter-item .dropdown {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  @include scroll-default;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  cursor: pointer;
+  padding: 12px;
+  gap: 4px;
+  border: 1px solid $color-grey-outline;
+  border-radius: 8px;
+  background-color: $color-main-white;
+
+  .filter-text {
+    line-height: 12px;
+  }
+
+  &-text {
+    @include inter-12-regular;
+  }
+
+  &-tags {
+    @include inter-12-medium;
+    color: $color-main-white;
+    background-color: $color-primary;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
+  &-blue {
+    background-color: $color-primary-surface;
+    color: $color-primary;
+    border-color: $color-primary-surface;
+    padding: 8px 12px;
+    svg path {
+      stroke: $color-primary;
+    }
+  }
+
+  .Icon-IconSize__big {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 250px;
+  border: 1px solid $color-grey-outline;
+  border-radius: 8px;
+  max-height: 482px;
+  overflow-y: auto;
+}
+
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+.header-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-main-white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 12px 16px;
+
+  .header-title {
+    @include inter-14-semibold;
+  }
+
+  .header-subtitle {
+    @include inter-12-regular;
+    color: $color-primary;
+    cursor: pointer;
+  }
+}
+
+.collapse {
+  border-radius: 8px !important;
+  &:not(:last-child) {
+    border-radius: 0 !important;
+    border-bottom: 1px solid $color-grey-outline;
+  }
+  .collapse-input {
+    display: none;
+  }
+
+  .collapse-title {
+    @include inter-12-regular;
+    padding: 12px 8px 12px 16px !important;
+    min-height: 0 !important;
+    height: 42px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .collapse-content {
+    display: none;
+    padding: 0 16px !important;
+    background-color: $color-grey-background;
+  }
+
+  .collapse-input:checked ~ .collapse-content {
+    display: block;
+  }
+}
+
+.collapse label .collapse-title {
+  height: 20px !important;
+}
+
+.content-filter {
+  padding: 0;
+
+  .date-content {
+    padding: 16px 0;
+
+    .date-item {
+      margin-bottom: 8px;
+
+      .date-header {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+
+      .date-picker {
+        width: 100%;
+        height: 42px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .content-checkbox {
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px !important;
+      padding: 12px 0;
+
+      .label-container {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        @include inter-12-regular;
+        color: $color-main-black !important;
+
+        input {
+          margin-right: 8px;
+        }
+      }
+
+      & > .Search,
+      .Search__OuterBorder {
+        width: 100%;
+        min-width: 0;
+        margin-right: 0;
+        margin-left: 0;
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+      }
+    }
+  }
+}
+
+.see-more {
+  margin-top: -6px;
+  margin-bottom: -6px;
+}

@@ -1,0 +1,124 @@
+@import 'ui-kit/styles';
+
+.concise-component-card {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+  &-subsubtitle {
+    @include inter-20-medium;
+    margin-bottom: 24px;
+  }
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+  &-bg-grey {
+    background-color: $color-grey-background;
+    padding: 24px;
+    display: grid;
+    // grid-template-columns: auto auto;
+    gap: 24px;
+  }
+  &-typo {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+    &-title {
+      text-align: center;
+    }
+  }
+  &-bg-white {
+    background-color: $color-main-white;
+    padding: 24px;
+  }
+  &-bg-orientation {
+    background-color: $color-grey-background;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 44px 100px;
+    gap: 24px;
+  }
+  &-size {
+    &-item {
+      display: grid;
+      grid-template-columns: repeat((2, 50%));
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 24px;
+      & > :nth-child(2) {
+        justify-self: start;
+      }
+    }
+  }
+  &-orientation {
+    margin-bottom: 8px;
+    margin-top: 48px;
+    @include inter-20-medium;
+    &-desc {
+      margin-bottom: 48px;
+      @include inter-16-regular;
+    }
+  }
+  &-product {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 32px;
+    justify-items: center;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 50px;
+      &-desc {
+        @include inter-16-medium;
+        text-align: center
+      }
+    }
+  }
+  &-surface {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &-item {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      &-desc {
+        &-title {
+          @include inter-18-medium;
+        }
+        &-subtitle {
+          @include inter-16-regular;
+        }
+      }
+    }
+    &-bg-grey {
+      background-color: $color-grey-background;
+      padding: 24px;
+    }
+  }
+  &-variations {
+    @include inter-24-regular;
+  }
+  &-variants {
+    @include inter-20-regular;
+    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+}

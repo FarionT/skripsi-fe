@@ -1,0 +1,119 @@
+@import 'ui-kit/styles';
+
+.conciseTag {
+  display: flex;
+  text-align: center;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: $color-tags-primary;
+  color: $color-tagsText-primary;
+
+  &Text {
+    display: flex;
+    text-align: center;
+    width: fit-content;
+    border-radius: 8px;
+    svg path {
+      fill: $color-secondary;
+    }
+  }
+  &__xsmall {
+    @include inter-12-medium;
+    padding: 4px 8px;
+  }
+  &__small {
+    @include inter-14-medium;
+    padding: 7px 12px;
+  }
+  &__big {
+    @include inter-16-medium;
+    padding: 8px 12px;
+  }
+
+  &__gray {
+    background-color: $color-tags-gray;
+    color: $color-tagsText-gray;
+    border: 1px solid rgba($color-tagsText-gray, 0.3);
+  }
+
+  &__primary {
+    background-color: $color-tags-primary;
+    color: $color-tagsText-primary;
+    border: 1px solid rgba($color-tagsText-primary, 0.3);
+  }
+
+  &__green {
+    background-color: $color-tags-green;
+    color: $color-tagsText-green;
+    border: 1px solid rgba($color-tagsText-green, 0.3);
+  }
+
+  &__cyan {
+    background-color: $color-tags-cyan;
+    color: $color-tagsText-cyan;
+    border: 1px solid rgba($color-tagsText-cyan, 0.3);
+  }
+
+  &__purple {
+    background-color: $color-tags-purple;
+    color: $color-tagsText-purple;
+    border: 1px solid rgba($color-tagsText-purple, 0.3);
+  }
+
+  &__pink {
+    background-color: $color-tags-pink;
+    color: $color-tagsText-pink;
+    border: 1px solid rgba($color-tagsText-pink, 0.3);
+  }
+
+  &__orange {
+    background-color: $color-tags-orange;
+    color: $color-tagsText-orange;
+    border: 1px solid rgba($color-tagsText-orange, 0.3);
+  }
+
+  &Icon {
+    margin-right: 4px;
+    &__gray {
+      svg path {
+        fill: $color-tagsText-gray;
+      }
+    }
+
+    &__primary {
+      svg path {
+        fill: $color-tagsText-primary;
+      }
+    }
+
+    &__green {
+      svg path {
+        fill: $color-tagsText-green;
+      }
+    }
+
+    &__cyan {
+      svg path {
+        fill: $color-tagsText-cyan;
+      }
+    }
+
+    &__purple {
+      svg path {
+        fill: $color-tagsText-purple;
+      }
+    }
+
+    &__pink {
+      svg path {
+        fill: $color-tagsText-pink;
+      }
+    }
+
+    &__orange {
+      svg path {
+        fill: $color-tagsText-orange;
+      }
+    }
+  }
+}

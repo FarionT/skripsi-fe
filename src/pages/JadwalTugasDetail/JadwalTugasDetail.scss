@@ -1,0 +1,306 @@
+@import 'ui-kit/styles';
+.JadwalTugasDetail {
+  .filter-button {
+    border: 2px solid $color-primary;
+
+    .filter-text {
+      display: flex;
+      align-items: center;
+
+      .filter-button-text {
+        color: $color-primary;
+        @include inter-16-medium;
+      }
+    }
+    .Icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg path {
+      fill: $color-primary;
+    }
+  }
+
+  .filter-button:hover {
+    color: #55adff;
+    background-color: #e6f0f8;
+    outline-color: #55adff;
+  }
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.form-row .form-button-start {
+  justify-content: flex-start !important;
+}
+
+.prodeacon-schedules-header {
+  align-items: center;
+
+  .Button {
+    height: 48px;
+  }
+
+  .dropdown-content {
+    z-index: 255;
+  }
+}
+
+.form-row-manage-mass {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.form-row-manage-mass:has(.form-button:only-child) {
+  justify-content: flex-end;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.calendar-header-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.current-month {
+  color: $color-main-black;
+  @include inter-32-bold;
+}
+
+.calendar-month-navigation {
+  position: relative;
+
+  .react-calendar {
+    position: absolute;
+    z-index: 255;
+
+    max-width: 350px;
+    margin-top: 10px;
+  }
+}
+
+.prodeacon-schedules-calendar-navigation {
+  background-color: $color-primary-surface !important;
+  padding: 12px !important;
+
+  svg path {
+    fill: $color-primary !important;
+  }
+
+  svg.isStroke path {
+    fill: unset !important;
+    stroke: $color-primary !important;
+  }
+}
+
+.prodeacon-schedules-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  .Button {
+    width: max-content;
+  }
+}
+
+.Search {
+  margin-right: 0px;
+}
+
+.gereja-detail-modal-container {
+  .concise-SelectSingleInput .dropdown-content {
+    max-height: 175px;
+  }
+}
+
+// CUSTOM STYLING CALENDAR
+.fc .fc-daygrid-day-frame {
+  max-height: 75px;
+  overflow-y: auto;
+}
+
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: 1px solid #f2f4f7;
+}
+
+.fc-scrollgrid-sync-inner {
+  background-color: #f9fafb;
+}
+
+.fc-day-today .fc-scrollgrid-sync-inner {
+  background-color: #f8eee6;
+}
+
+.custom-event {
+  background-color: #f9fafb;
+  border-radius: 0px;
+
+  padding: 4px;
+  text-align: right;
+
+  cursor: pointer;
+
+  .fc-event-title {
+    color: $color-main-black;
+    text-overflow: ellipsis;
+  }
+}
+
+.fc-daygrid-event-harness:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.custom-event-weekday {
+  border: 2px solid rgb(190, 233, 232);
+  background-color: rgba(190, 233, 232, 0.2);
+}
+
+.custom-event-weekday:focus {
+  border: 2px solid rgb(104, 126, 125);
+  background-color: rgba(104, 126, 125, 0.2);
+}
+
+.custom-event-weekend {
+  border: 2px solid rgb(98, 182, 203);
+  background-color: rgba(98, 182, 203, 0.2);
+}
+.custom-event-weekend:focus {
+  border: 2px solid rgb(59, 100, 111);
+  background-color: rgba(59, 100, 111, 0.2);
+}
+
+.custom-event-special {
+  border: 2px solid rgb(254, 147, 140);
+  background-color: rgba(254, 147, 140, 0.2);
+}
+.custom-event-special:focus {
+  border: 2px solid rgb(137, 82, 78);
+  background-color: rgba(137, 82, 78, 0.2);
+}
+
+.custom-event-disabled {
+  background-color: $color-tags-gray;
+}
+
+.FormField .dropdown:has(.concise-SelectMulti) {
+  border: 1px solid $color-primary-outline;
+
+  svg.isStroke path {
+    fill: unset !important;
+    stroke: $color-main-black;
+  }
+
+  .Search {
+    display: block;
+    width: 100%;
+  }
+
+  .concise-SelectMultiChildActive {
+    background-color: transparent;
+    color: $color-main-black;
+  }
+
+  .concise-SelectMultiInput {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-height: 75px;
+    overflow-y: auto;
+  }
+
+  .concise-input[type='checkbox']:checked {
+    background-color: $color-primary !important;
+    background-size: 75%;
+  }
+
+  .concise-SelectMultiLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid #d5d5d5;
+    padding: 8px 12px;
+
+    .Icon svg.isStroke path {
+      fill: unset !important;
+      stroke: $color-danger;
+    }
+  }
+}
+
+input[type='time'],
+input[type='date'] {
+  color-scheme: light !important;
+}
+
+.FormField.greater-than-quota:has(.ErrorMessage) .dropdown:has(.concise-SelectMulti) {
+  border: 1px solid #f98600 !important;
+}
+
+.FormField.greater-than-quota .FormField-Count,
+.FormField.greater-than-quota .ErrorMessage {
+  @include inter-10-bold;
+  color: #f98600 !important;
+}
+
+.FormField.less-than-quota .FormField-Count,
+.FormField.less-than-quota .ErrorMessage {
+  @include inter-10-bold;
+  color: $color-danger !important;
+}
+
+.fc-event-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.custom-event .fc-event-schedule svg {
+  margin-right: 5px;
+}
+
+.custom-event.greater-than-quota .fc-event-schedule svg path {
+  fill: #f98600;
+}
+
+.custom-event.less-than-quota .fc-event-schedule svg path {
+  fill: $color-danger;
+}
+
+// .custom-event.greater-than-quota,
+// .custom-event.less-than-quota {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// .custom-event.greater-than-quota::before {
+//   width: 16px;
+//   height: 16px;
+//   content: url(../../ui-kit/assets/icons/ChevronUpAlt.svg);
+// }
+
+// .custom-event.less-than-quota::before {
+//   width: 16px;
+//   height: 16px;
+//   content: url(../../ui-kit/assets/icons/ChevronDownAlt.svg);
+// }

@@ -1,0 +1,67 @@
+@import 'ui-kit/styles';
+
+.radioButton {
+    $this: &;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 400;
+    font-size: 12px;
+
+    &#{$this}__hovered {
+        input:hover {
+            -webkit-appearance: none;
+            background-color: white;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #55ADFF !important;
+        }
+    }
+
+    &#{$this}__error {
+        input {
+            -webkit-appearance: none;
+            background-color: white;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #F54949 !important;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+    &__input:checked {
+        background-color: #0084FF;
+        border-color: #0084FF;
+    }
+
+    &__input:disabled {
+        @include themify($themes) {
+  background-color: themed('colorComponent');
+}
+        border-color: #E5E5E5;
+    }
+
+    &__small {
+        input {
+            width: 9px;
+            height: 9px;
+            font-size: 10px;
+        }
+    }
+
+    &__medium {
+        input {
+            width: 12px;
+            height: 12px;
+            font-size: 12px;
+        }
+    }
+}

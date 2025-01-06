@@ -1,0 +1,101 @@
+@import 'ui-kit/styles';
+
+.NotificationBadge {
+    $this: &;
+    position: relative;
+    display: flex;
+    
+
+    &#{$this}__plain{
+        width: 8px;
+        height: 8px;
+        background-color: #F54949;
+        border-radius: 100%;
+    }
+
+    &#{$this}__numbered{
+        width: 16px;
+        height: 16px;
+        background-color: #F54949;
+        border-radius: 100%;
+        font-size: 8px;
+        font-weight: 600;
+        justify-content: center;
+        align-items: center;
+        color: $color-main-white;
+    }
+
+    &#{$this}__status{
+        &#{$this}__primary{
+            padding: 4px 8px;
+            @include inter-12-medium;
+            color: $color-primary;
+            cursor: pointer;
+            background-color: $color-primary-surface;
+            border-radius: 200px;
+            border: 1px solid #AAD6FF;
+
+            &::before {
+                content: '\25CF';
+                margin-right: 7px;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+            }
+        }
+
+        &#{$this}__success{
+            padding: 4px 8px;
+            @include inter-12-medium;
+            color: $color-success;
+            cursor: pointer;
+            background-color: #DEF9E7;
+            border-radius: 200px;
+            border: 1px solid #AAE8BB;
+
+            &::before {
+                content: '\25CF';
+                margin-right: 7px;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+            }
+        }
+
+        &#{$this}__warning{
+            padding: 4px 8px;
+            @include inter-12-medium;
+            color: $color-warning;
+            cursor: pointer;
+            background-color: #FFECD5;
+            border-radius: 200px;
+            border: 1px solid #FDD7AA;
+
+            &::before {
+                content: '\25CF';
+                margin-right: 7px;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+            }
+        }
+
+        &#{$this}__danger{
+            padding: 4px 8px;
+            @include inter-12-medium;
+            color: $color-danger;
+            cursor: pointer;
+            background-color: #FDDBDB;
+            border-radius: 200px;
+            border: 1px solid #FCC2C2;
+
+            &::before {
+                content: '\25CF';
+                margin-right: 7px;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+            }
+        }
+    }
+}

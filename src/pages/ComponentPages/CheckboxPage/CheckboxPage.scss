@@ -1,0 +1,148 @@
+@import 'ui-kit/styles';
+
+.concise-component-checkbox {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+
+  &-text {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+
+  &-bg {
+    &-grey {
+      background-color: #F5F5F5;
+      padding: 20px 100px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &-dark-grey {
+      background-color: #D5D5D5;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      border-radius: 8px;
+      width: 325px;
+    }
+
+    &-white {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    &-inline {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      width: 440px;
+    }
+  
+    &-stacked {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 372px;
+    }
+  }
+
+  &-heading {
+    @include inter-24-medium;
+    margin-bottom: 24px;
+  }
+
+  &-orientation {
+    @include inter-20-medium;
+    margin-bottom: 24px;
+    &-text {
+      @include inter-16-medium;
+      margin-bottom: 8px;
+    }
+  }
+
+  &-label {
+    @include inter-20-medium;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+
+  &-behaviors {
+    @include inter-32-medium;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  &-states {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+  }
+
+  &-frame {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 17px;
+    gap: 12px;
+    &-text {
+      @include inter-12-regular
+    }
+  }
+
+  &-size {
+    display: flex;
+    flex-direction: row;
+    &-text {
+      @include inter-16-medium;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 275px;
+    }
+  }
+
+  &-variant {
+    @include inter-24-medium;
+    margin-bottom: 24px;
+    margin-top: 48px;
+  }
+}

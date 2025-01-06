@@ -1,0 +1,61 @@
+@import 'ui-kit/styles';
+
+.Toastify__toast-body {
+  padding: 0px !important;
+}
+
+.Toastify__toast {
+  position: relative;
+
+  @include themify($themes) {
+    background-color: themed('toastBackgroundColor');
+    color: themed('textColor');
+  }
+}
+
+.toastBorder {
+  $this: &;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    
+    background-color: $color-success;
+    border-radius: 20px;
+
+    content: '';
+    width: 2px;
+    height: calc(100% - 16px);
+  }
+
+  &#{$this}__info::before {
+    background-color: $color-primary;
+  }
+  &#{$this}__danger::before {
+    background-color: $color-danger;
+  }
+}
+
+.toastIcon {
+  padding-left: 12px;
+  align-self: center;
+}
+
+.toastHeader {
+  margin-bottom: 4px;
+  @include inter-14-semibold;
+}
+
+.toastMessages {
+  @include inter-12-regular;
+}
+
+.toastClose {
+  align-self: center;
+  svg path {
+    @include themify($themes) {
+      fill: themed('textColor');
+    }
+  }
+}

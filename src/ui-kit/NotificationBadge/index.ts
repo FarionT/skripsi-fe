@@ -1,0 +1,1 @@
+export { NotificationBadge as default } from './NotificationBadge'

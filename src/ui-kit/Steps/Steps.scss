@@ -1,0 +1,1216 @@
+@import 'ui-kit/styles';
+
+.stepsdata-container {
+  display: flex;
+  flex-direction: row;
+
+  .stepsdata-info,
+  .stepsdata-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-top: -25px;
+  }
+
+  .stepsdata-info {
+    margin-left: 9%;
+  }
+
+  .stepsdata-title {
+    margin-left: 1%;
+  }
+}
+
+.c-Steps {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &.horizontal {
+    flex-direction: row;
+
+    .c-Steps__title{
+      @extend .ellipsis;
+    }
+
+    .c-Steps__item {
+      &.steps {
+      }
+
+      &.stepsdata {
+        .step-number {
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            margin-top: 5px;
+            margin-left: 69px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: calc(120% - 2rem);
+            left: calc(40% + 1rem);
+          }
+
+          &:last-child {
+            &:before {
+              margin-top: 4px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          width: 150px;
+          &.small {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.test {
+        .step-number {
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            margin-top: 5px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: calc(120% - 2rem);
+          }
+
+          &:last-child {
+            &:before {
+              margin-top: 5.5px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          width: 150px;
+          &.small {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.normal {
+        .step-number {
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            margin-top: 5px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: calc(120% - 2rem);
+            left: calc(40% + 1rem);
+          }
+
+          &:last-child {
+            &:before {
+              margin-top: 4px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          width: 150px;
+          &.small {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.non {
+        .step-number {
+          margin-top: -0.75px;
+        }
+
+        &:last-child {
+          .step-number {
+            margin-top: 0px;
+          }
+        }
+        &.small {
+          &:before {
+            margin-top: 5px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: calc(120% - 2rem);
+            left: calc(10% + 1rem);
+          }
+
+          &:last-child {
+            &:before {
+              margin-top: 3.5px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          &.small {
+            width: 150px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.inline {
+        .step-number {
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            margin-top: 1.5px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: 10px;
+            left: 0px;
+          }
+
+          &:last-child {
+            &:before {
+              margin-left: 30px;
+            }
+
+            .c-Steps__title {
+              margin-right: 42px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          &.small {
+            width: 70px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.secondary {
+        &:not(:last-child) {
+          &:after {
+            top: 0.65em;
+          }
+        }
+
+        &:last-child {
+          &:after {
+          }
+        }
+        .step-number {
+          margin-top: -1px;
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            margin-top: 6.57px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: calc(117% - 2rem);
+            left: calc(47% + 0.5rem); // Adjust based on the fixed circle size
+          }
+
+          &:last-child {
+            &:before {
+              margin-top: 5.5px;
+            }
+
+            .c-Steps__title {
+              // margin-right: 42px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          &.small {
+            font-size: 12px;
+          }
+        }
+
+        .c-Steps__desc {
+          max-width: 180px;
+          &.small {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+    width: 200px;
+
+    .c-Steps__item {
+      margin-bottom: 30px;
+      align-items: flex-start;
+      display: flex;
+      text-align: left;
+      flex-direction: row;
+      padding-right: 0;
+
+      .step-number {
+        position: relative;
+        top: 0;
+        width: 18px;
+        left: -14.5px;
+        transform: none; // Remove transform
+        font-size: 0.75rem;
+        color: rgb(255, 255, 255);
+        z-index: 2;
+      }
+
+      .c-Steps__subss {
+        padding-top: 20px;
+        margin-left: -37px;
+        margin-bottom: -13px;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .c-Steps {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+          @extend .ellipsis;
+          margin: 0;
+          font-size: 12px;
+          min-width: 70px;
+          max-width: 100px;
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__subtime {
+          font-size: 0.6rem;
+          margin-left: -34px;
+          text-align: left;
+        }
+
+        &__desc {
+          font-size: 0.6rem;
+          margin-left: -37px;
+          max-width: 120px;
+          min-width: 120px;
+          text-align: left;
+        }
+      }
+
+      &.normal {
+        .step-number {
+          top: 1px;
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            left: 3.2px;
+            top: calc(3% + 0.5rem);
+            width: 1.7px;
+            height: 210%;
+          }
+
+          &:last-child {
+            &:after {
+              margin-left: -1.2px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          &.small {
+            font-size: 12px;
+            margin-left: 12px;
+            margin-top: 2px;
+          }
+        }
+
+        .c-Steps__desc {
+          max-width: 180px;
+          &.small {
+            font-size: 10px;
+          }
+        }
+      }
+
+      &.non {
+        .c-Steps {
+          display: none;
+        }
+
+        .step-number {
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            margin-top: 6.57px;
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            width: calc(117% - 2rem);
+            left: calc(47% + 0.5rem); // Adjust based on the fixed circle size
+          }
+
+          &:last-child {
+            &:before {
+              margin-top: 5.5px;
+            }
+
+            .c-Steps__title {
+              // margin-right: 42px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          &.small {
+            font-size: 12px;
+          }
+        }
+
+        .c-Steps__desc {
+          max-width: 180px;
+          &.small {
+            font-size: 10px;
+          }
+        }
+      }
+
+      &.secondary {
+        .step-number {
+          position: relative;
+          top: 0;
+          width: 20px;
+          left: -19px;
+          transform: none; // Remove transform
+          font-size: 0.75rem;
+          color: rgb(255, 255, 255);
+          z-index: 2;
+        }
+
+        .c-Steps__desc {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-height: 1.2em;
+          margin-bottom: 5px;
+          // display: none;
+          opacity: 0;
+
+          &.open {
+            // @extend .ellipsis;
+            white-space: normal;
+            overflow: visible;
+            text-overflow: ellipsis;
+            max-height: 100px;
+            max-width: 120px;
+            margin-bottom: -5px;
+            opacity: 100%;
+          }
+        }
+
+        &:not(:last-child) {
+          &:before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            opacity: 1;
+            margin: 0; // Reduced margin
+            z-index: 1;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            left: 8px;
+            top: calc(10% + 0.5rem);
+            height: 150%;
+            background-color: var(--line-color);
+            margin-bottom: 25px;
+            z-index: 0;
+          }
+        }
+
+        .step-number {
+          &.small {
+            display: none;
+          }
+        }
+
+        &.small {
+          &:before {
+            width: 8px;
+            height: 8px;
+          }
+
+          &:after {
+            left: 3.2px;
+            top: calc(0% + 0.5rem);
+            width: 1.7px;
+            height: 170%;
+          }
+
+          &:last-child {
+            &:after {
+              margin-left: -2px;
+            }
+          }
+        }
+
+        .c-Steps__title {
+          &.small {
+            font-size: 12px;
+            margin-left: 12px;
+            margin-top: -5px;
+          }
+        }
+
+        .c-Steps__desc {
+          max-width: 180px;
+          &.small {
+            font-size: 10px;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        &:before {
+          content: '';
+          display: block;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          opacity: 1;
+          margin: 0; // Reduced margin
+          z-index: 1;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          left: 8px; // Adjust to align the connector line with the step number
+          top: calc(30% + 0.5rem);
+          height: 42px;
+          background-color: var(--line-color);
+          margin-bottom: 25px;
+          z-index: 0;
+        }
+      }
+
+      &:last-child {
+        &:before {
+          margin: 0;
+        }
+
+        &:after {
+          opacity: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.c-Steps__item {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1rem; // Ensure consistent spacing for all steps
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    opacity: 1;
+    margin: 0 auto 0.5rem;
+    z-index: 1;
+  }
+
+  &--status {
+    &-warning {
+      &.current {
+        &:before {
+          background-color: $color-main-white;
+          border: solid 2px $color-warning;
+        }
+      }
+      &::before {
+        background-color: $color-warning;
+      }
+      &::after {
+        background-color: $color-warning;
+      }
+
+      &.test {
+        &::after {
+          background-color: $color-danger;
+        }
+      }
+    }
+
+    &-default {
+      &.current {
+        &:before {
+          background-color: $color-main-white;
+          border: solid 2px $color-primary;
+        }
+      }
+      &::before {
+        background-color: $color-primary;
+      }
+    }
+
+    &-error {
+      &.current {
+        &:before {
+          background-color: $color-main-white;
+          border: solid 2px $color-danger;
+        }
+      }
+      &::before {
+        background-color: $color-danger;
+      }
+    }
+
+    &-disable {
+      &.current {
+        &:before {
+          background-color: $color-main-white;
+          border: solid 2px $color-grey-disabled;
+        }
+      }
+      &::before {
+        background-color: $color-grey-disabled;
+      }
+    }
+  }
+
+  .step-number {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+  }
+
+  &.next {
+    &:before {
+      background-color: $color-main-white;
+    }
+  }
+
+  &.inline {
+    display: flex;
+    gap: var(--spacing);
+    align-items: center;
+    flex-direction: row;
+    width: 150px;
+
+    .c-Steps__title {
+      max-width: 90px;
+    }
+
+    .c-Steps__item{
+      width: 150px;
+    }
+
+    &:before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 50%;
+      // background-color: var(--line-color);
+      z-index: 2;
+    }
+
+    &:not(:last-child) {
+      flex: 1;
+    }
+
+    &:not(:last-child):after {
+      content: '';
+      position: relative;
+      z-index: 0;
+      height: 2px;
+      top: -3px;
+      width: 50px;
+      z-index: 2;
+      left: 0px;
+      flex: 1;
+      background-color: var(--line-color);
+      margin-right: 0.2rem;
+    }
+
+    &:last-child:after {
+      content: '';
+      width: 0;
+      height: 3px;
+      opacity: 0;
+      margin-right: -80px;
+      margin-left: 10px;
+      padding-left: 20px;
+      padding-right: -30px;
+      order: -1;
+    }
+
+    .c-Steps__desc {
+      display: none;
+    }
+    .c-Steps__title {
+      text-align: left;
+      margin-left: 5px;
+      margin-top: -5px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 0%;
+      width: 18px;
+      background-color: transparent;
+      transform: translateX(-50%);
+      font-size: 0.75rem; // Adjust font size
+      color: rgb(255, 255, 255); // Color for the step number
+      z-index: 2;
+      left: 8.5px;
+    }
+
+    &:last-child {
+      .step-number {
+        left: 10px;
+      }
+
+      .c-Steps__title {
+        width: 70px;
+        text-align: left;
+        margin-left: -40px;
+        margin-right: 50px;
+      }
+    }
+  }
+
+  &.test {
+    margin-bottom: 2rem;
+    flex-direction: column;
+
+    .step-number{
+      top: 4%;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    &.current {
+      &.c-Steps__item--testStatus {
+        &-complete {
+          &:last-child {
+            &:before {
+              background-color: $color-primary;
+            }
+            &:after {
+              content: '';
+              position: relative;
+              top: 0.65em;
+              width: calc(130% - 2rem);
+              left: 0%;
+              height: 2px;
+              background-color: $color-primary;
+              z-index: 0;
+              order: -1;
+            }
+          }
+        }
+        &-active {
+          &:last-child {
+            &:after {
+              content: '';
+              position: relative;
+              top: 0.65em;
+              width: calc(130% - 2rem);
+              left: 0%;
+              height: 2px;
+              background: linear-gradient(
+                to right, 
+                $color-primary 45%, 
+                $color-grey-outline 50%
+              );
+              z-index: 0;
+              order: -1;
+            }
+          }
+        }
+        &-isdisable {
+          &:last-child {
+            &:after {
+              content: '';
+              position: relative;
+              top: 0.65em;
+              width: calc(130% - 2rem);
+              left: 0%;
+              height: 2px;
+              background-color: $color-grey-disabled;
+              z-index: 0;
+              order: -1;
+            }
+          }
+        }
+        &-incomplete {
+          &:last-child {
+
+            &::before{
+              border: 2px solid $color-grey-outline;
+            }
+            &:after {
+              content: '';
+              position: relative;
+              top: 0.65em;
+              width: calc(130% - 2rem);
+              left: 0%;
+              height: 2px;
+              background-color: $color-grey-outline;
+              z-index: 0;
+              order: -1;
+            }
+          }
+        }
+        &-iswarning {
+          &:last-child {
+            &:before {
+              background-color: $color-warning;
+            }
+            &:after {
+              content: '';
+              position: relative;
+              top: 0.65em;
+              width: calc(130% - 2rem);
+              left: 0%;
+              height: 2px;
+              background-color: $color-warning;
+              z-index: 0;
+              order: -1;
+            }
+          }
+        }
+        &-iserror {
+          &:last-child {
+            &:before {
+              background-color: $color-danger;
+            }
+            &:after {
+              content: '';
+              position: relative;
+              top: 0.65em;
+              width: calc(130% - 2rem);
+              left: 0%;
+              height: 2px;
+              background-color: $color-danger;
+              z-index: 0;
+              order: -1;
+            }
+          }
+        }
+      }
+    }
+    .step-number {
+      margin-top: -0.75px;
+    }
+
+    &:last-child {
+      .step-number {
+        margin-top: 0px;
+      }
+    }
+
+    &:before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        position: relative;
+        top: 0.65em;
+        width: calc(130% - 2rem);
+        left: calc(34% + 1rem);
+        height: 2px;
+        background-color: var(--line-color);
+        z-index: 0;
+        order: -1;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+        position: relative;
+        top: 0.65em;
+        width: calc(130% - 2rem);
+        left: 0%;
+        height: 2px;
+        background-color: var(--line-color);
+        z-index: 0;
+        order: -1;
+      }
+    }
+
+    .c-Steps__title {
+      width: 150px;
+    }
+
+    .c-Steps__desc {
+      margin-bottom: 0.5rem; // Adjust description margin
+    }
+  }
+
+  &.normal {
+    margin-bottom: 2rem;
+    flex-direction: column;
+
+    .step-number {
+      margin-top: -0.75px;
+    }
+
+    &:last-child {
+      .step-number {
+        margin-top: 0px;
+      }
+    }
+
+    &:before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        position: relative;
+        top: 0.65em;
+        width: calc(130% - 2rem);
+        left: calc(34% + 1rem);
+        height: 2px;
+        background-color: var(--line-color);
+        z-index: 0;
+        order: -1;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+        width: 0; // No line at the end
+        height: 3px; // Thinner line
+        opacity: 0;
+        order: -1;
+      }
+    }
+
+    .c-Steps__title {
+      width: 150px;
+    }
+
+    .c-Steps__desc {
+      margin-bottom: 0.5rem; // Adjust description margin
+    }
+  }
+
+  &.secondary {
+    flex-direction: column;
+    margin-bottom: 2rem; // Customize this margin as needed
+    .c-Steps__desc {
+      max-width: 180px;
+    }
+    &:before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        position: relative;
+        top: 0.7em;
+        width: calc(115% - 2rem);
+        left: calc(50% + 0.5rem); // Adjust based on the fixed circle size
+        height: 2px; // Thinner line
+        background-color: var(--line-color); // Use CSS variable for color
+        z-index: 0;
+        order: -1;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+        width: 0; // No line at the end
+        height: 3px; // Thinner line
+        opacity: 0;
+        order: -1;
+      }
+    }
+  }
+
+  &.stepsdata {
+    flex-direction: column;
+    margin-bottom: 2rem; // Customize this margin as needed
+    min-width: 150px;
+    // max-width: 150px;
+
+    .step-number {
+      &.small {
+        display: none;
+      }
+    }
+
+    &:before {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        position: relative;
+        top: 0.6em;
+        width: calc(120% - 2rem);
+        left: calc(35% + 1rem);
+        height: 2px; // Thinner line
+        background-color: var(--line-color); // Use CSS variable for color
+        z-index: 0;
+        order: -1;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+        width: 0; // No line at the end
+        height: 3px; // Thinner line
+        opacity: 0;
+        order: -1;
+      }
+
+      &:before {
+        margin-top: -1px;
+      }
+    }
+
+    .c-Steps__title {
+      text-align: center;
+    }
+
+    .c-Steps__desc {
+      opacity: 0;
+    }
+
+    .step-number {
+      color: $color-main-white;
+      z-index: 2;
+      left: 75px;
+      margin-top: -1px;
+    }
+  }
+
+  // Custom styles for 'non' label type
+  &.non {
+    flex-direction: column;
+    min-width: 150px;
+    margin-bottom: 2rem; // Customize this margin as needed
+
+    .step-number {
+      &.small {
+        display: none;
+      }
+    }
+
+    &:before {
+      width: 18px;
+      height: 18px;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        position: relative;
+        top: 0.6em;
+        width: calc(120% - 2rem);
+        left: calc(15% + 1rem);
+        height: 2px; // Thinner line
+        background-color: var(--line-color); // Use CSS variable for color
+        z-index: 0;
+        order: -1;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+        width: 0; // No line at the end
+        height: 3px; // Thinner line
+        opacity: 0;
+        order: -1;
+      }
+    }
+
+    .c-Steps__title,
+    .c-Steps__desc {
+      opacity: 0;
+    }
+
+    .step-number {
+      z-index: 2;
+      left: 34px;
+    }
+  }
+
+  &.next {
+    &:before {
+      background-color: $color-main-white;
+      border: solid 2px $color-grey-outline;
+    }
+  }
+}
+
+.c-Steps__title {
+  // font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 0.25rem;
+}
+
+// .c-Steps__title::after {
+//   content: attr(data-title);
+//   position: absolute;
+//   display: flex;
+//   align-self: center;
+//   bottom: 100%;
+//   background-color: $color-primary;
+//   color: $color-main-white;
+//   padding: 5px;
+//   border-radius: 3px;
+//   white-space: nowrap;
+//   font-size: 12px;
+//   visibility: hidden;
+//   opacity: 0;
+//   transition: opacity 0.3s, visibility 0.3s;
+//   z-index: 1000;
+// }
+
+// .c-Steps__title:hover::after {
+//   visibility: visible;
+//   opacity: 1;
+// }
+
+.c-Steps__desc {
+  color: grey;
+  font-size: 10px;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.btn-stepspage {
+  &-prev {
+    background-color: $color-primary;
+    padding: 5px 10px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px  ;
+    color: $color-main-white;
+  }
+  &-next{
+    background-color: $color-primary;
+    padding: 5px 10px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px  ;
+    color: $color-main-white;
+  }
+}
+
+.ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // width: 150px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .c-Steps__item:before {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .c-Steps__title {
+    font-size: 0.7rem;
+  }
+
+  .c-Steps__desc {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,66 @@
+@import 'ui-kit/styles';
+
+.concise-component-textarea {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+  &-subsubtitle {
+    @include inter-20-medium;
+  }
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+    }
+  }
+  &-type {
+    @include inter-16-medium;
+  }
+  &-bg-grey {
+    background-color: $color-grey-background;
+    padding: 20px 100px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  &-bg-white {
+    background-color: $color-main-white;
+    padding: 24px;
+  }
+  &-bg-size {
+    padding: 24px;
+    background-color: $color-grey-background;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 24px;
+    align-items: center;
+    justify-items: center;
+    &>:nth-child(odd) {
+      align-items: center;
+    }
+  }
+  &-variations {
+    @include inter-24-regular;
+    margin-bottom: 8px
+  }
+  &-variants {
+    @include inter-20-regular;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,372 @@
+@import 'ui-kit/styles';
+
+.conciseAlert {
+  position: fixed;
+  // width: 100vw !important;
+  z-index: 20;
+  width: 100%;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  top: 64px;
+  left: 102px;
+  // border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  transition: 0.25s ease-in-out;
+  transform-origin: center;
+  overflow: hidden;
+  max-height: 0;
+  width: calc(100% - 102px);
+  &-show {
+    max-height: fit-content;
+    padding: 12px;
+  }
+
+  &-sidebarOpen {
+    width: calc(100% - 280px);
+    left: 280px;
+  }
+
+  &-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  &-subtle {
+    .conciseAlert {
+      &-headerRight {
+        color: $color-main-black;
+        button {
+          background-color: transparent !important;
+          svg path {
+            fill: $color-main-black !important;
+          }
+        }
+      }
+    }
+  }
+  &-rightButton {
+    background-color: transparent !important;
+  }
+
+  // Style
+  &-none {
+    background-color: $color-main-black;
+    color: $color-main-white;
+    .conciseAlert {
+      &-button {
+        background-color: $color-grey-placeholder !important;
+      }
+    }
+    &.conciseAlert-subtle {
+      background-color: $color-main-white;
+      color: $color-main-black;
+      .conciseAlert {
+        &-headerLeft {
+          color: $color-main-black;
+          svg path {
+            // fill: $color-primary;
+            stroke: $color-main-black;
+          }
+        }
+        &-headerRight {
+          color: $color-main-black;
+          button {
+            background-color: transparent !important;
+            color: $color-main-black !important;
+            svg path {
+              fill: $color-main-black !important;
+            }
+          }
+        }
+        &-dismissable {
+          svg path {
+            fill: $color-main-black
+          }
+        }
+        &-button {
+          background-color: $color-grey-placeholder !important;
+          color: $color-main-black !important;
+          svg path {
+            fill: $color-main-black !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-information {
+    background-color: $color-primary;
+    color: $color-main-white;
+    .conciseAlert {
+      &-button {
+        background-color: $color-primary-hovered !important;
+      }
+    }
+    &.conciseAlert-subtle {
+      background-color: $color-primary-surface;
+      color: $color-primary;
+      .conciseAlert {
+        &-headerLeft {
+          color: $color-primary;
+          svg path {
+            // fill: $color-primary;
+            stroke: $color-primary;
+          }
+        }
+        &-headerRight {
+          color: $color-main-black;
+          button {
+            background-color: transparent !important;
+            color: $color-main-black !important;
+            svg path {
+              fill: $color-main-black !important;
+            }
+          }
+        }
+        &-dismissable {
+          svg path {
+            fill: $color-primary
+          }
+        }
+        &-button {
+          background-color: $color-main-white !important;
+          color: $color-main-black !important;
+          svg path {
+            fill: $color-main-black !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-success {
+    background-color: $color-success;
+    color: $color-main-white;
+    .conciseAlert {
+      &-button {
+        background-color: $color-success-hovered !important;
+        svg path {
+          fill: $color-main-white;
+        }
+      }
+    }
+    &.conciseAlert-subtle {
+      background-color: $color-success-surface;
+      color: $color-success;
+      .conciseAlert {
+        &-headerLeft {
+          color: $color-success;
+          svg path {
+            // fill: $color-primary;
+            stroke: $color-success;
+          }
+        }
+        &-headerRight {
+          color: $color-success;
+          button {
+            background-color: transparent !important;
+            color: $color-main-black !important;
+            svg path {
+              fill: $color-main-black !important;
+            }
+          }
+        }
+        &-dismissable {
+          svg path {
+            fill: $color-success
+          }
+        }
+        &-button {
+          background-color: $color-main-white !important;
+          color: $color-main-black !important;
+          svg path {
+            fill: $color-main-black !important;
+          }
+        }
+      }
+    }
+  }
+  
+  &-warning {
+    background-color: $color-warning;
+    color: $color-main-white;
+    .conciseAlert {
+      &-button {
+        background-color: $color-warning-hovered !important;
+        svg path {
+          fill: $color-main-white;
+        }
+      }
+    }
+    &.conciseAlert-subtle {
+      background-color: $color-warning-surface;
+      color: $color-warning;
+      .conciseAlert {
+        &-headerLeft {
+          color: $color-warning;
+          svg path {
+            // fill: $color-primary;
+            stroke: $color-warning;
+          }
+        }
+        &-headerRight {
+          color: $color-success;
+          button {
+            background-color: transparent !important;
+            color: $color-main-black !important;
+            svg path {
+              fill: $color-main-black !important;
+            }
+          }
+        }
+        &-dismissable {
+          svg path {
+            fill: $color-warning
+          }
+        }
+        &-button {
+          background-color: $color-main-white !important;
+          color: $color-main-black !important;
+          svg path {
+            fill: $color-main-black !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-error {
+    background-color: $color-danger;
+    color: $color-main-white;
+    .conciseAlert {
+      &-button {
+        background-color: $color-danger-hovered !important;
+        svg path {
+          fill: $color-main-white;
+        }
+      }
+    }
+    &.conciseAlert-subtle {
+      background-color: $color-danger-surface;
+      color: $color-danger;
+      .conciseAlert {
+        &-headerLeft {
+          color: $color-danger;
+          svg path {
+            // fill: $color-danger;
+            stroke: $color-danger;
+          }
+        }
+        &-headerRight {
+          color: $color-success;
+          button {
+            background-color: transparent !important;
+            color: $color-main-black !important;
+            svg path {
+              fill: $color-main-black !important;
+            }
+          }
+        }
+        &-dismissable {
+          svg path {
+            fill: $color-danger
+          }
+        }
+        &-button {
+          background-color: $color-main-white !important;
+          color: $color-main-black !important;
+          svg path {
+            fill: $color-main-black !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Size
+  &-small {
+    .conciseAlert {
+      &-title {
+        @include inter-12-medium;
+      }
+      &-leftIcon {
+        // svg path {
+        //   fill: $color-main-white;
+        // }
+      }
+      &-contentMessage {
+        @include inter-12-regular;
+      }
+    }
+  }
+
+  &-medium {
+    @include inter-14-medium;
+    .conciseAlert {
+      &-title {
+        @include inter-14-medium;
+      }
+      &-contentMessage {
+        @include inter-14-regular;
+      }
+    }
+  }
+
+  &-large {
+    .conciseAlert {
+      &-title {
+        @include inter-16-medium;
+      }
+      &-contentMessage {
+        @include inter-16-regular;
+      }
+    }
+  }
+  
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &Left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &Right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+      svg path {
+        fill: $color-main-white
+      }
+    }
+  }
+  
+
+  &-dismissable {
+    cursor: pointer;
+    svg path {
+      fill: $color-main-white;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    &Message {
+      @include inter-14-regular
+    }
+  }
+
+  &-button {
+
+  }
+
+
+}

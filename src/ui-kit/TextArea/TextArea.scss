@@ -1,0 +1,98 @@
+@import 'ui-kit/styles';
+
+.concise-textarea {
+  $this: &;
+  width: 100%;
+  border: 1px solid $color-grey-outline;
+  border-radius: 8px;
+  padding: 12px;
+  // box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+  // height: 132px;
+  resize: none;
+  @include themify($themes) {
+    background-color: themed('bodyBackgroundColor');
+    color: themed('textColor');
+  }
+  &.input__small {
+    @include inter-12-regular;
+  }
+  &.input__medium {
+    @include inter-14-regular;
+  }
+  &.input__large {
+    @include inter-16-regular;
+  }
+  &-parent {
+    position: relative;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  @keyframes loading-spin {
+    to { transform: rotate(360deg); }
+  }
+  &-icon-loading {
+    -webkit-animation: loading-spin .75s linear infinite;
+    animation: loading-spin .75s linear infinite;
+  }
+  &-icon {
+    position: absolute;
+    right: 0;
+    top:0;
+    margin: 12px;
+  }
+  
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-primary;
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+  &:disabled {
+    pointer-events: none;
+    color: $color-main-black;
+    @include themify($themes) {
+      background-color: themed('disabledBackground');
+    }
+  }
+
+  &::placeholder {
+    color: $color-grey-placeholder;
+  }
+
+  // Error
+  &.input__error  {
+    border-color: $color-danger !important;
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba($color-danger, 0.2);
+    }
+  }
+
+  // Warning
+  &.input__warning  {
+    border-color: #F98600 !important;
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba(#F98600, 0.2);
+    }
+  }
+
+  // Success
+  &.input__success  {
+    border-color: #00BA34 !important;
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba(#00BA34, 0.2);
+    }
+  }
+}
+
+.TextArea:-webkit-autofill {
+  -webkit-background-clip: text;
+}
+

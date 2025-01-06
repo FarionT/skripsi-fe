@@ -1,0 +1,51 @@
+@import 'ui-kit/styles';
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  @include min-width(large) {
+    gap: 80px;
+  }
+  &__Image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      border-radius: 8px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &Image {
+    max-height: 300px;
+    grid-column: span 12 / span 12;
+    @include min-width(small) {
+      grid-column: span 6 / span 6;
+    }
+    @include min-width(large) {
+      max-width: 460px;
+      justify-self: right;
+    }
+  }
+  &Content {
+    align-self: center;
+    max-height: 300px;
+    grid-column: span 12 / span 12;
+    @include min-width(small) {
+      grid-column: span 6 / span 6;
+    }
+    @include min-width(large) {
+      max-width: 460px;
+    }
+  }
+  &__title {
+    @include inter-40-bold;
+    margin-bottom: 24px;
+  }
+  &__desc {
+    @include inter-18-regular;
+    margin-bottom: 24px;
+  }
+}

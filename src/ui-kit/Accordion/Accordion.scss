@@ -1,0 +1,266 @@
+@import 'ui-kit/styles';
+
+.conciseAccordion {
+  border-top: 1px solid $color-grey-outline;
+  border-left: 1px solid $color-grey-outline;
+  border-right: 1px solid $color-grey-outline;
+  // transition: 0.25s ease-in-out;
+  // transform-origin: center;
+  @include themify($themes) {
+    background-color: themed('colorComponent');
+  }
+  &-bold {
+    .conciseAccordion {
+      &Title {
+        background-color: $color-primary;
+        color: $color-main-white;
+      }
+      svg path {
+        @include themify($themes) {
+          stroke: themed('colorPath');
+        }
+      }
+      &-active {
+        .conciseAccordion {
+          &Title {
+            background-color: $color-primary-pressed;
+          }
+          &Border {
+            border-top: 0;
+          }
+          &Content {
+            border: 1px solid $color-primary-pressed;
+          }
+        }
+      }
+    }
+  }
+
+  &-small {
+    .conciseAccordion {
+      &Title {
+        @include inter-12-semibold
+      }
+      &Content {
+        @include inter-12-regular
+      }
+      &-childTitle {
+        @include inter-12-semibold
+      }
+    }
+    &.conciseAccordion-marketing {
+      .conciseAccordion {
+        &Title {
+          padding: 24px 16px;
+          @include inter-16-regular;
+        }
+        &Content {
+          @include inter-12-regular;
+          padding: 0 16px;
+        }
+        &Border {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  &-medium {
+    .conciseAccordion {
+      &Title {
+        @include inter-14-semibold
+      }
+      &Content {
+        @include inter-14-regular;
+      }
+      &-childTitle {
+        @include inter-14-semibold
+      }
+    }
+    &.conciseAccordion-marketing {
+      .conciseAccordion {
+        &Title {
+          padding: 36px 16px;
+          @include inter-16-regular;
+        }
+        &Content {
+          @include inter-14-regular;
+          padding: 0 16px;
+        }
+        &Border {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  &-large {
+    .conciseAccordion {
+      &Title {
+        @include inter-16-semibold
+      }
+      &Content {
+        @include inter-16-regular
+      }
+      &-childTitle {
+        @include inter-16-semibold
+      }
+    }
+    &.conciseAccordion-marketing {
+      .conciseAccordion {
+        &Title {
+          padding: 48px 16px;
+          @include inter-18-regular;
+        }
+        &Content {
+          @include inter-16-regular;
+          padding: 0 16px;
+        }
+        &Border {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  &-marketing {
+    .conciseAccordion {
+      &-active {
+        .conciseAccordion {
+          &Content {
+            padding: 0 16px 32px;
+          }
+        }
+      }
+    }
+  }
+
+  &-product {
+    .conciseAccordion {
+      &-active {
+        .conciseAccordion {
+          &Content {
+            padding: 12px 0 0;
+            border-top: 1px solid $color-grey-outline;
+          }
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $color-grey-outline;
+  }
+  &Title {
+    cursor: pointer;
+    display: flex;
+    @include inter-16-semibold;
+    padding: 12px 16px;
+    min-height: auto !important;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    &-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+  &Content{
+    transition: 0.25s ease-in-out;
+    transform-origin: center;
+    overflow: hidden;
+    max-height: 0;
+    &-text {
+      padding: 0px 16px;
+      margin: auto;
+    }
+  }
+  &Border {
+    // border-top: 1px solid $color-grey-outline;
+  }
+  &-caretDown {
+    transition: 0.25s ease-in-out;
+    transform-origin: center;
+    svg path {
+      @include themify($themes) {
+        stroke: themed('colorPath');
+      }
+    }
+  }
+  &-title-icon {
+    margin-left: -4px;
+    svg path {
+      // fill: $color-primary;
+      stroke: $color-primary;
+    }
+  }
+  
+  &-active {
+    &.conciseAccordion {
+      border: 1px solid $color-primary;
+    }
+    .conciseAccordion {
+      &-caretDown {
+        transform: rotate(180deg);
+      }
+      &Content {
+        max-height: fit-content;
+        &-text {
+          padding-bottom: 12px;;
+        }
+      }
+    }
+  }
+  
+  &-disabled {
+    pointer-events: none;
+    .conciseAccordion {
+      &Title {
+        background-color: $color-grey-disabled;
+        color: $color-grey-placeholder;
+      }
+      &-caretDown {
+        transition: 0.25s ease-in-out;
+        transform-origin: center;
+        svg path {
+          stroke: $color-grey-placeholder;
+        }
+      }
+    }
+  }
+  &-child {
+    &Title {
+      padding: 12px 16px 12px 32px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid $color-grey-placeholder;
+    }
+    &Content {
+      padding: 0 16px 0 32px;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.25s ease-in-out;
+      transform-origin: center;
+    }
+    &CaretDown {
+      transition: 0.25s ease-in-out;
+      transform-origin: center;
+    }
+
+    &Active {
+      .conciseAccordion-child {
+        &Content {
+          max-height: fit-content;
+          padding: 12px 16px 12px 32px;
+        }
+        &CaretDown {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,927 @@
+@import 'ui-kit/styles';
+
+.Button {
+  $this: &;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // height: max-content;
+  width: max-content;
+
+  border-radius: 8px;
+  // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+
+  &-right {
+    transition: 0.15s ease-in-out;
+  }
+
+  &_LeftIcon {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  &_RightIcon {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+
+  &#{$this}__small {
+    @include inter-12-medium;
+    padding: 4px 12px;
+  }
+
+  &#{$this}__medium {
+    @include inter-14-medium;
+    padding: 8px 12px;
+    line-height: 20px;
+    .Icon {
+      height: 20px;
+    }
+  }
+
+  &#{$this}__big {
+    @include inter-16-medium;
+    padding: 9px 12px;
+  }
+
+  // Primary
+  &#{$this}__primary {
+    &#{$this}__filled {
+      @include themify($themes) {
+        color: themed('colorComponent');
+      }
+      background-color: $color-primary;
+      svg path {
+        fill: $color-main-white;
+      }
+      svg.isStroke path {
+        fill: unset;
+        stroke: $color-main-white;
+      }
+
+      &:hover {
+        background-color: $color-primary-hovered;
+      }
+
+      &:active {
+        background-color: $color-primary-pressed;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        pointer-events: none;
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__transparent {
+      color: $color-primary;
+      background-color: $color-primary-surface;
+      svg path {
+        fill: $color-primary;
+      }
+
+      &:hover {
+        color: $color-primary-hovered;
+        svg path {
+          fill: $color-primary-hovered;
+        }
+      }
+
+      &:active {
+        svg path {
+          fill: $color-primary-pressed;
+        }
+        color: $color-primary-pressed;
+        outline: none;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        color: $color-main-white;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        svg.isStroke path {
+          fill: unset;
+          stroke: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__outline {
+      padding: 12px;
+      color: $color-primary;
+      background-color: transparent;
+      outline: $color-primary;
+      border: 2px solid $color-primary;
+      svg path {
+        fill: $color-primary;
+      }
+      svg.isStroke path {
+        fill: unset !important;
+        stroke: $color-primary;
+      }
+      &:hover {
+        svg path {
+          fill: $color-primary-hovered;
+        }
+        svg.isStroke path {
+          fill: unset !important;
+          stroke: $color-primary-hovered;
+        }
+        color: $color-primary-hovered;
+        background-color: $color-primary-surface;
+        outline-color: $color-primary-hovered;
+      }
+      &:active {
+        svg path {
+          fill: $color-primary-pressed;
+        }
+        color: $color-primary-pressed;
+        background-color: transparent;
+        border: 1px solid $color-primary-pressed;
+        outline-color: $color-primary-pressed;
+      }
+
+      // &#{$this}__big {
+      //   padding: 8px 12px;
+      // }
+
+      // &#{$this}__small {
+      //   padding: 7px 12px;
+      // }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          border-color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+          svg.isStroke path {
+            fill: unset;
+            stroke: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+
+    &#{$this}__frameless {
+      color: $color-primary;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      svg path {
+        fill: $color-primary;
+      }
+      &:hover {
+        color: $color-primary-hovered;
+        border-color: transparent;
+        svg path {
+          fill: $color-primary-hovered;
+        }
+      }
+      &:active {
+        svg path {
+          fill: $color-primary-pressed;
+        }
+        color: $color-primary-pressed;
+        background-color: $color-primary-surface;
+        background-color: transparent;
+      }
+
+      &#{$this}__disabled {
+        color: $color-grey-disabled;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        svg.isStroke path {
+          fill: unset;
+          stroke: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__link {
+      text-decoration: underline;
+      color: $color-primary;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      svg path {
+        fill: $color-primary;
+      }
+      &:hover {
+        color: $color-primary-hovered;
+        border-color: transparent;
+        svg path {
+          fill: $color-primary-hovered;
+        }
+      }
+      &:active {
+        svg path {
+          fill: $color-primary-pressed;
+        }
+        color: $color-primary-pressed;
+        background-color: $color-primary-surface;
+        background-color: transparent;
+      }
+
+      &#{$this}__disabled {
+        color: $color-grey-disabled;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+
+  // Destructive
+  &#{$this}__destructive {
+    &#{$this}__filled {
+      color: $color-main-white;
+      background-color: $color-danger;
+      svg path {
+        fill: $color-main-white;
+      }
+
+      &:hover {
+        background-color: $color-danger-hovered;
+      }
+
+      &:active {
+        background-color: $color-danger-pressed;
+        // box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        pointer-events: none;
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__transparent {
+      color: $color-danger;
+      background-color: $color-danger-focused;
+      svg path {
+        fill: $color-danger;
+      }
+
+      &:hover {
+        color: $color-danger-hovered;
+        svg path {
+          fill: $color-danger-hovered;
+        }
+      }
+
+      &:active {
+        svg path {
+          fill: $color-danger-pressed;
+        }
+        color: $color-danger-pressed;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        color: $color-main-white;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        svg.isStroke path {
+          fill: unset;
+          stroke: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__outline {
+      color: $color-danger;
+      background-color: transparent;
+      border: 1px solid $color-danger;
+      svg path {
+        fill: $color-danger;
+      }
+      &:hover {
+        svg path {
+          fill: $color-danger-hovered;
+        }
+        color: $color-danger-hovered;
+        background-color: $color-danger-surface;
+        outline-color: $color-danger-hovered;
+      }
+      &:active {
+        svg path {
+          fill: $color-danger-pressed;
+        }
+        color: $color-danger-pressed;
+        border: 1px solid $color-danger-pressed;
+        background-color: transparent;
+        outline-color: $color-danger-pressed;
+      }
+
+      &#{$this}__big {
+        padding: 8px 12px;
+      }
+
+      &#{$this}__small {
+        padding: 7px 12px;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          border-color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+          svg.isStroke path {
+            fill: unset;
+            stroke: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+
+    &#{$this}__frameless {
+      color: $color-danger;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      svg path {
+        fill: $color-danger;
+      }
+      &:hover {
+        color: $color-danger-hovered;
+        background-color: transparent;
+        border-color: transparent;
+        svg path {
+          fill: $color-danger-hovered;
+        }
+      }
+      &:active {
+        svg path {
+          fill: $color-danger-pressed;
+        }
+        color: $color-danger-pressed;
+        background-color: transparent;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+          svg.isStroke path {
+            fill: unset;
+            stroke: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+
+    &#{$this}__link {
+      color: $color-danger;
+      text-decoration: underline;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      svg path {
+        fill: $color-danger;
+      }
+      &:hover {
+        color: $color-danger-hovered;
+        background-color: transparent;
+        border-color: transparent;
+        svg path {
+          fill: $color-danger-hovered;
+        }
+      }
+      &:active {
+        svg path {
+          fill: $color-danger-pressed;
+        }
+        color: $color-danger-pressed;
+        background-color: transparent;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+          svg.isStroke path {
+            fill: unset;
+            stroke: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Secondary
+  &#{$this}__secondary {
+    &#{$this}__filled {
+      color: $color-main-black;
+      background-color: $color-grey-placeholder;
+      svg path {
+        fill: $color-main-black;
+      }
+
+      &:hover {
+        background-color: $color-grey-disabled;
+      }
+
+      &:active {
+        background-color: $color-grey-placeholder;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        pointer-events: none;
+        color: $color-main-white;
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__transparent {
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      svg path {
+        fill: $color-main-black;
+      }
+
+      &:hover {
+        color: $color-grey-placeholder;
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+      }
+
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+      }
+
+      &#{$this}__disabled {
+        // @include themify($themes) {
+        //   background-color: themed('disabledBackground');
+        // }
+        color: $color-grey-disabled;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        svg path {
+          fill: unset;
+          stroke: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__outline {
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      border: 1px solid $color-grey-outline;
+      svg path {
+        fill: $color-main-black;
+      }
+      &:hover {
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+        color: $color-grey-placeholder;
+        // background-color: $color-main-white;
+        outline-color: $color-secondary-hovered;
+      }
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+        border: 1px solid $color-main-black;
+        background-color: transparent;
+        outline-color: $color-main-black;
+      }
+
+      &#{$this}__big {
+        padding: 8px 12px;
+      }
+
+      &#{$this}__small {
+        padding: 7px 12px;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          border-color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+          svg.isStroke path {
+            fill: unset;
+            stroke: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+
+    &#{$this}__frameless {
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      svg path {
+        fill: $color-main-black;
+      }
+
+      &:hover {
+        color: $color-grey-placeholder;
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+      }
+
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+      }
+
+      &#{$this}__disabled {
+        color: $color-grey-disabled;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__link {
+      text-decoration: underline;
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      svg path {
+        fill: $color-main-black;
+      }
+
+      &:hover {
+        color: $color-grey-placeholder;
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+      }
+
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+      }
+
+      &#{$this}__disabled {
+        color: $color-grey-disabled;
+        pointer-events: none;
+        svg path {
+          fill: $color-main-white;
+        }
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+
+  // Info
+  &#{$this}__info {
+    &#{$this}__filled {
+      color: $color-main-white;
+      background-color: $color-main-black;
+      svg path {
+        fill: $color-main-white;
+      }
+
+      &:hover {
+        background-color: $color-grey-disabled;
+        color: $color-grey-placeholder;
+      }
+
+      &:active {
+        color: $color-main-white;
+        background-color: $color-main-black;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        pointer-events: none;
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__transparent {
+      color: $color-main-white;
+      background-color: $color-main-black;
+      svg path {
+        fill: $color-main-white;
+      }
+
+      &:hover {
+        background-color: $color-grey-disabled;
+        color: $color-grey-placeholder;
+      }
+
+      &:active {
+        color: $color-main-white;
+        background-color: $color-main-black;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          background-color: themed('disabledBackground');
+        }
+        pointer-events: none;
+        &:active {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    &#{$this}__outline {
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      border: 1px solid $color-main-black;
+      svg path {
+        fill: $color-main-black;
+      }
+      &:hover {
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+        color: $color-grey-placeholder;
+        background-color: transparent;
+        border: 1px solid $color-grey-placeholder;
+      }
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+        background-color: transparent;
+        border: 1px solid $color-main-black;
+        outline-color: $color-danger-pressed;
+      }
+
+      &#{$this}__big {
+        padding: 8px 12px;
+      }
+
+      &#{$this}__small {
+        padding: 7px 12px;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          border-color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+
+    &#{$this}__frameless {
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      svg path {
+        fill: $color-main-black;
+      }
+      &:hover {
+        color: $color-grey-placeholder;
+        background-color: transparent;
+        border-color: transparent;
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+      }
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+        background-color: transparent;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+
+    &#{$this}__link {
+      text-decoration: underline;
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      svg path {
+        fill: $color-main-black;
+      }
+      &:hover {
+        color: $color-grey-placeholder;
+        background-color: transparent;
+        border-color: transparent;
+        svg path {
+          fill: $color-grey-placeholder;
+        }
+      }
+      &:active {
+        svg path {
+          fill: $color-main-black;
+        }
+        color: $color-main-black;
+        background-color: transparent;
+      }
+
+      &#{$this}__disabled {
+        @include themify($themes) {
+          color: themed('disabledBackground');
+          svg path {
+            fill: themed('disabledBackground');
+          }
+        }
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Loading
+  &#{$this}__loading {
+    background-color: $color-primary !important;
+    color: $color-main-white;
+    &#{$this}__big {
+      padding: 15px 12px;
+    }
+
+    &#{$this}__medium {
+      padding: 12px 12px;
+    }
+
+    &#{$this}__small {
+      padding: 7px 12px;
+    }
+  }
+
+  // Success
+  &#{$this}__success {
+    color: $color-main-white;
+    border-radius: 8px;
+    background-color: $color-success !important;
+    .Icon {
+      height: 12px;
+      width: 12px;
+      padding: 0;
+    }
+    &#{$this}__big {
+      padding: 15px 12px;
+    }
+
+    &#{$this}__medium {
+      padding: 12px 12px;
+    }
+
+    &#{$this}__small {
+      padding: 7px 12px;
+    }
+
+    &#{$this}__disabled {
+      @include themify($themes) {
+        background-color: themed('disabledBackground') !important;
+      }
+      pointer-events: none;
+      &:active {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  // Danger
+  &#{$this}__warning {
+    color: $color-main-white;
+    border-radius: 8px;
+    background-color: $color-danger !important;
+    .Icon {
+      height: 12px;
+      width: 12px;
+      padding: 0;
+    }
+    &#{$this}__big {
+      padding: 15px 12px;
+    }
+
+    &#{$this}__medium {
+      padding: 12px 12px;
+    }
+
+    &#{$this}__small {
+      padding: 7px 12px;
+    }
+  }
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
+}
+.spinner-border-sm {
+  height: 12px;
+  border-width: 0.2em;
+}

@@ -1,0 +1,417 @@
+// @import 'ui-kit/styles';
+
+// .c-StepsTest {
+//   display: flex;
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+
+//   &.horizontal {
+//     flex-direction: row;
+//   }
+
+//   &.vertical {
+//     flex-direction: column;
+//     max-width: 200px;
+//     min-width: 200px;
+
+//     .c-StepsTest__item {
+//       margin-bottom: 1rem;
+//       align-items: flex-start;
+//       display: flex;
+//       flex-direction: row;
+//       padding-right: 0;
+
+//       .step-number {
+//         position: relative;
+//         top: 0;
+//         width: 20px;
+//         left: -19px;
+//         transform: none; // Remove transform
+//         font-size: 0.75rem;
+//         color: rgb(255, 255, 255);
+//         z-index: 2;
+//       }
+
+//       .c-StepsTest__subss {
+//         padding-top: 20px;
+//         margin-left: -37px;
+//         margin-bottom: -3px;
+//         align-items: flex-start;
+//         display: flex;
+//         flex-direction: column;
+//       }
+
+//       .c-StepsTest {
+//         align-items: flex-start;
+//         display: flex;
+//         flex-direction: column;
+
+//         &__title {
+//           margin: 0;
+//           align-items: flex-start;
+//           display: flex;
+//           flex-direction: column;
+//         }
+
+//         &__subtime {
+//           font-size: 0.6rem;
+//           text-align: left;
+//         }
+
+//         &__desc {
+//           font-size: 0.6rem;
+//           margin-left: -2px;
+//           max-width: 100px;
+//           min-width: 100px;
+//           text-align: left;
+//         }
+//       }
+
+//       &.secondary {
+//         .step-number {
+//           position: relative;
+//     border-radius: 50%;
+
+//           top: 0;
+//           width: 20px;
+//           left: -20px;
+//           transform: none; // Remove transform
+//           font-size: 0.75rem;
+//           color: rgb(255, 255, 255);
+//           z-index: 2;
+//         }
+
+//         &:not(:last-child) {
+//           &:before {
+//             content: '';
+//             display: block;
+//             width: 18px;
+//             height: 18px;
+//             border-radius: 50%;
+//             opacity: 1;
+//             margin: 0; // Reduced margin
+//             z-index: 1;
+//           }
+
+//           &:after {
+//             content: '';
+//             position: absolute;
+//             width: 2px;
+//             left: 8px;
+//             top: calc(10% + 0.5rem);
+//             height: 120%;
+//             background-color: var(--line-color);
+//             margin-bottom: 25px;
+//             z-index: 0;
+//           }
+//         }
+//       }
+
+//       &:not(:last-child) {
+//         &:before {
+//           content: '';
+//           display: block;
+//           width: 18px;
+//           height: 18px;
+//           border-radius: 50%;
+//           opacity: 1;
+//           margin: 0; // Reduced margin
+//           z-index: 1;
+//         }
+
+//         &:after {
+//           content: '';
+//           position: absolute;
+//           width: 2px;
+//           left: 8px; // Adjust to align the connector line with the step number
+//           top: calc(30% + 0.5rem);
+//           height: 35px;
+//           background-color: var(--line-color);
+//           margin-bottom: 25px;
+//           z-index: 0;
+//         }
+//       }
+
+//       &:last-child {
+//         &:before {
+//           margin: 0;
+//         }
+
+//         &:after {
+//           opacity: 0;
+//           margin: 0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .c-StepsTest__item {
+//   display: flex;
+//   flex: 1;
+//   text-align: center;
+//   position: relative;
+//   margin-bottom: 1rem; // Ensure consistent spacing for all steps
+
+//   &:before {
+//     content: '';
+//     display: block;
+//     width: 18px;
+//     height: 18px;
+//     border-radius: 50%;
+//     opacity: 1;
+//     margin: 0 auto 0.5rem; // Reduced margin
+//     z-index: 1;
+//   }
+
+//   .step-number {
+//     position: absolute;
+//     top: 3px; // Center the number in the circle
+//     left: 50%;
+//     transform: translateX(-50%);
+//     border-radius: 50%;
+//     font-size: 0.75rem; // Adjust font size
+//     color: rgb(255, 255, 255); // Color for the step number
+//     z-index: 2;
+//   }
+
+//   &.inline {
+//     display: flex;
+//     gap: var(--spacing);
+//     align-items: center;
+//     flex-direction: row;
+
+//     &:before {
+//       content: '';
+//       width: 18px;
+//       height: 18px;
+//       display: block;
+//       border-radius: 50%;
+//       background-color: var(--line-color);
+//     }
+
+//     &:not(:last-child) {
+//       flex: 1;
+//     }
+
+//     &:not(:last-child):after {
+//       content: '';
+//       position: relative;
+//       z-index: 2;
+//       height: 3px;
+//       top: -3px;
+//       width: 30px;
+//       left: 0px;
+//       flex: 1;
+//       background-color: var(--line-color);
+//       margin-right: 0.2rem;
+//     }
+
+//     &:last-child:after {
+//       content: '';
+//       width: 0;
+//       height: 3px;
+//       opacity: 0;
+//       margin-right: -10px;
+//       margin-left: 5px;
+//       padding-left: 5px;
+//       padding-right: -10px;
+//       order: -1;
+//     }
+
+//     .c-StepsTest__desc {
+//       display: none; // Hide description if not needed for inline
+//     }
+//     .c-StepsTest__title {
+//       width: 50px;
+//     }
+
+//     .step-number {
+//       position: absolute;
+//       top: 0%;
+//     border-radius: 50%;
+
+//       transform: translateX(-50%);
+//       font-size: 0.75rem; // Adjust font size
+//       color: rgb(255, 255, 255); // Color for the step number
+//       z-index: 2;
+//       left: 9%;
+//     }
+
+//     &:last-child {
+//       .step-number {
+//         left: 13%; // Adjust positioning specifically for the last step
+//       }
+//     }
+//   }
+
+//   &.normal {
+//     margin-bottom: 2rem; // Customize this margin as needed
+//     flex-direction: column;
+
+//     &:before {
+//       width: 18px;
+//       height: 18px;
+//     }
+
+//     &:not(:last-child) {
+//       &:after {
+//         content: '';
+//         position: relative;
+//         top: 0.7em;
+//         width: calc(140% - 2rem);
+//         left: calc(30% + 1rem);
+//         height: 3px; // Thinner line
+//         background-color: var(--line-color);
+//         z-index: 0;
+//         order: -1;
+//       }
+//     }
+
+//     &:last-child {
+//       &:after {
+//         content: '';
+//         width: 0; // No line at the end
+//         height: 3px; // Thinner line
+//         opacity: 0;
+//         order: -1;
+//       }
+//     }
+
+//     .c-StepsTest__title {
+//       margin-left: 1rem;
+//       margin-right: 1rem;
+//     }
+
+//     .c-StepsTest__desc {
+//       margin-bottom: 0.5rem; // Adjust description margin
+//     }
+//   }
+
+//   &.secondary {
+//     flex-direction: column;
+//     margin-bottom: 2rem; // Customize this margin as needed
+
+//     &:before {
+//       width: 18px;
+//       height: 18px;
+//     }
+
+//     &:not(:last-child) {
+//       &:after {
+//         content: '';
+//         position: relative;
+//         top: 0.7em;
+//         width: calc(120% - 2rem); // Adjust width based on the fixed circle size
+//         left: calc(50% + 0.5rem); // Adjust based on the fixed circle size
+//         height: 3px; // Thinner line
+//         background-color: var(--line-color); // Use CSS variable for color
+//         z-index: 0;
+//         order: -1;
+//       }
+//     }
+
+//     &:last-child {
+//       &:after {
+//         content: '';
+//         width: 0; // No line at the end
+//         height: 3px; // Thinner line
+//         opacity: 0;
+//         order: -1;
+//       }
+//     }
+//   }
+
+//   &.steps {
+//   }
+
+//   // Custom styles for 'non' label type
+//   &.non {
+//     flex-direction: column;
+//     margin-bottom: 2rem; // Customize this margin as needed
+
+//     &:before {
+//       width: 18px;
+//       height: 18px;
+//       margin-left: 25px;
+//       margin-right: 25px;
+//     }
+
+//     &:not(:last-child) {
+//       &:after {
+//         content: '';
+//         position: relative;
+//         top: 0.6em;
+//         width: calc(150% - 2rem); // Adjust width based on the fixed circle size
+//         left: calc(25% + 1rem); // Adjust based on the fixed circle size for non labels
+//         height: 3px; // Thinner line
+//         background-color: var(--line-color); // Use CSS variable for color
+//         z-index: 0;
+//         order: -1;
+//       }
+//     }
+
+//     &:last-child {
+//       &:after {
+//         content: '';
+//         width: 0; // No line at the end
+//         height: 3px; // Thinner line
+//         opacity: 0;
+//         order: -1;
+//       }
+//     }
+
+//     .c-StepsTest__title,
+//     .c-StepsTest__desc {
+//       opacity: 0;
+//     }
+
+//     .step-number {
+//       z-index: 2;
+//       border-radius: 50%;
+//     }
+//   }
+
+//   &.done:before {
+//     background-color: $color-primary;
+//   }
+
+//   &.current:before {
+//     background-color: $color-main-white;
+//     border: solid 2px $color-primary;
+//   }
+
+//   &.next:before {
+//     background-color: $color-grey-outline;
+//   }
+// }
+
+// .c-StepsTest__title {
+//   font-weight: bold;
+//   font-size: 0.75rem;
+//   margin-bottom: 0.25rem;
+// }
+
+// .c-StepsTest__desc {
+//   color: grey;
+//   font-size: 0.7rem;
+//   padding-left: 0.25rem;
+//   padding-right: 0.25rem;
+// }
+
+// /* Responsive adjustments */
+// @media (max-width: 600px) {
+//   .c-StepsTest__item:before {
+//     width: 0.8rem;
+//     height: 0.8rem;
+//   }
+
+//   .c-StepsTest__title {
+//     font-size: 0.7rem;
+//   }
+
+//   .c-StepsTest__desc {
+//     font-size: 0.6rem;
+//   }
+// }

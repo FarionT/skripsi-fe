@@ -1,0 +1,106 @@
+@import 'ui-kit/styles';
+
+.calendar-container {
+  //   @include inter-18-regular;
+  text-align: center;
+  padding: 8px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template: repeat(7, auto) / repeat(7, auto);
+}
+
+.calendar-disabled {
+  opacity: 0.5; // or any other styling to indicate disabled state
+  pointer-events: none; // disable click events on disabled dates
+}
+
+.calendar-years {
+  display: grid;
+  min-width: 252px;
+  max-height: 252px;
+  grid-template: repeat(3, auto) / repeat(3, auto);
+  overflow: auto;
+  @include scroll-default;
+}
+
+.calendar-cell {
+  text-align: center;
+  align-self: center;
+  letter-spacing: 0.1rem;
+  padding: 0.6em 0.25em;
+  user-select: none;
+}
+
+.calendar-years-cell {
+  height: 36px;
+}
+
+.calendar-day {
+  //calendar days title
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-date {
+  //calendar days date
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  //   font-weight: 500;
+  //   font-size: 4em;
+  //   border-bottom: 1px solid #ddd;
+  //   border-right: 1px solid #ddd;
+  //   color: #333;
+  //   transition: all 0.4s ease-out;
+}
+
+.highlighted-calendar-date {
+  color: #fff !important;
+  background: #06c !important;
+  position: relative;
+}
+
+.today-calendar-date {
+  color: #06c !important;
+  background: transparent !important;
+}
+
+.arrow {
+  appearance: none;
+  user-select: none;
+  outline: none !important;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  transition: all 0.25s ease-out;
+  &-left {
+    border-right: 2.4em solid #ccc;
+    left: 1.5rem;
+    :hover {
+      border-right-color: #06c;
+    }
+  }
+  &-right {
+    border-left: 2.4em solid #ccc;
+    right: 1.5rem;
+    :hover {
+      border-left-color: #06c;
+    }
+  }
+}

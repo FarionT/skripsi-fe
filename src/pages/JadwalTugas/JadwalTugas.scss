@@ -1,0 +1,21 @@
+@import 'ui-kit/styles';
+
+.prodeacon-scheduling-data {
+  .prodeacon-scheduling-content {
+    .prodeacon-scheduling-item {
+      cursor: pointer;
+
+      &:hover {
+        background-color: #006CB833 !important;
+      }
+
+      .church-name {
+        color: $color-primary-pressed !important;
+      }
+    }
+
+    .church-parish {
+      @include inter-20-regular;
+    }
+  }
+}

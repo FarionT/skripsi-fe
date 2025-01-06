@@ -1,0 +1,92 @@
+@import 'ui-kit/styles';
+
+.form-status {
+    display: flex;
+    width: 100%;
+
+    &:only-child {
+        width: 50%;
+    }
+
+    .radioButton {
+        width: 100%;
+    }
+}
+
+.form-row:has(.form-coordinator-availability) {
+    align-items: flex-end;
+}
+
+.form-coordinator-availability {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #EEF1F4;
+    width: 100%;
+    padding-bottom: 21px;
+
+    .label-coordinator-availability {
+        @include inter-16-regular
+    }
+}
+
+.form-coordinator-availability:only-child {
+    width: 50%;
+}
+
+.schedule-preferences-section .FormField-Label {
+    margin-bottom: 7px;
+}
+
+.form-schedule-preferences {
+    width: 100%;
+
+    .schedule-preferences-church {
+        margin-bottom: 24px;
+    }
+
+    .schedule-preferences-data {
+        .Dropdown,
+        .Dropdown__container {
+            width: 100%;
+        }
+
+        .Dropdown {
+            display: block;
+            margin-bottom: 7px;
+            height: auto;
+
+            .Dropdown__container {
+                border: 1px solid $color-primary-outline !important;
+                border-radius: 8px;
+                margin-bottom: 7px;
+                padding: 12px;
+            }
+
+            .Dropdown__content {
+                position: relative;
+                top: unset;
+                left: unset;
+                z-index: unset;
+
+                border: 1px solid $color-primary-outline !important;
+                border-radius: 8px;
+                width: 100%;
+
+                .schedule-preferences-row {
+                    display: flex;
+
+                    .schedule-preferences-time {
+                        padding: 12px;
+                        width: 100%;
+                    }
+                }
+
+                .schedule-preferences-row:not(:last-child) {
+                    border-bottom: 1px solid $color-primary-outline !important;
+                }
+            }
+        }
+    }
+}

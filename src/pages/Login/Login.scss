@@ -1,0 +1,72 @@
+@import 'ui-kit/styles';
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  .login-layout {
+    background-color: $color-main-white;
+    border-radius: 12px;
+
+    width: 100%;
+    max-width: 400px;
+    padding: 24px 36px;
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 345px;
+
+      margin: 0 auto 24px;
+
+      .login-form {
+        margin-bottom: 12px;
+
+        .login-header-title {
+          margin-bottom: 24px;
+
+          @include inter-32-bold;
+          color: $color-main-black;
+        }
+
+        .FormField:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        .FormField label {
+          font-size: 16px;
+        }
+
+        .login-btn {
+          border-radius: 6px;
+
+          width: 100%;
+          padding: 13px;
+        }
+      }
+
+      .forgot-pwd-link {
+        h4 {
+          @include inter-16-semibold;
+          color: $color-primary;
+        }
+        margin-bottom: 24px;
+
+        p {
+          @include inter-12-regular;
+          color: $color-grey-placeholder;
+
+          a {
+            color: $color-primary
+          }
+        }
+      }
+    }
+  }
+}

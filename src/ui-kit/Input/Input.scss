@@ -1,0 +1,140 @@
+@import 'ui-kit/styles';
+
+.concise-input {
+  $this: &;
+  @include inter-12-regular;
+  width: 100%;
+  border: 1px solid $color-primary-outline;
+  border-radius: 8px;
+  padding: 12px;
+
+  // Leading Icon
+  &.input__leadingIcon {
+    border-left: 0;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: none;
+  }
+
+  // Leading
+  &.input__leading {
+    border-left: 0;
+    border-radius: 0 8px 8px 0 !important;
+  }
+
+  // Trailing
+  &.input__trailing {
+    border-right: 0;
+    border-radius: 8px 0 0 8px !important;
+  }
+  
+  // Error
+  &.input__error  {
+    border-color: $color-danger !important;
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba($color-danger, 0.2);
+    }
+  }
+
+  // Warning
+  &.input__warning  {
+    border-color: #F98600 !important;
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba(#F98600, 0.2);
+    }
+  }
+
+  // Success
+  &.input__success  {
+    border-color: #00BA34 !important;
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba(#00BA34, 0.2);
+    }
+  }
+
+  // Medium Size
+  &.input__medium  {
+    padding: 9px 12px;
+  }
+
+  // Small Size
+  &.input__small  {
+    padding: 4px 12px;
+  }
+  
+  
+  // box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+  @include themify($themes) {
+    background-color: themed('inputBackgroundColor');
+    color: themed('textColor');
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-primary;
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+  }
+
+  &:disabled {
+    color: $color-grey-placeholder;
+    @include themify($themes) {
+      background-color: themed('disabledBackground');
+    }
+    pointer-events: none;
+  }
+
+  &:read-only {
+    color: $color-main-black;
+    @include themify($themes) {
+      background-color: themed('readonlyBackground') !important;
+    }
+  }
+
+  &::placeholder {
+    color: $color-grey-placeholder;
+  }
+
+  &#{$this}__error {
+    border-color: $color-danger !important;
+  }
+
+  &#{$this}__warning {
+    border-color: #F98600 !important;
+  }
+
+  &#{$this}__success {
+    border-color: #00BA34 !important;
+  }
+
+  &[type='checkbox']:checked {
+    background-image: url('../assets/icons/Check.svg');
+  }
+
+  &[type='checkbox']:checked,
+  &[type='radio']:checked {
+    background-color: $color-primary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+  }
+
+  &[type='checkbox'],
+  &[type='radio'] {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 2px;
+    border: 1px solid $color-primary;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0px rgba($color-primary, 0.2);
+    }
+  }
+}

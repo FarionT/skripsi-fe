@@ -1,0 +1,72 @@
+@import 'ui-kit/styles';
+
+.concise-component-table {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+
+  &-text {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+
+  &-border {
+    @include inter-16-medium;
+    margin-bottom: 8px;
+  }
+
+  &-density {
+    @include inter-20-medium;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+
+  &-bg {
+    &-grey {
+        background-color: #F5F5F5;
+        padding: 20px 24px;
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &-white {
+        background-color: #FFF;
+        padding: 24px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 832px;
+    }
+  }
+
+  &-heading {
+    @include inter-24-medium;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+}

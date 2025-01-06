@@ -1,0 +1,94 @@
+@import 'ui-kit/styles';
+
+.DropdownCheckbox {
+  $this: &;
+  display: flex;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  border: 1px solid #d5d5d5 !important;
+  @include themify($themes) {
+    background-color: themed('colorComponent');
+  }
+  border-radius: 8px;
+  padding: 13px 12px;
+  width: 198.6px;
+  height: 42px;
+
+  &#{$this}__primary {
+    border: 1px solid #0084ff !important;
+  }
+
+  &#{$this}__danger {
+    border: 1px solid #e92c2c !important;
+  }
+
+  &#{$this}__disabled {
+    border: 1px solid #d5d5d5 !important;
+    background-color: #e5e5e5;
+  }
+
+  &__content {
+    position: absolute;
+    @include themify($themes) {
+      stroke: themed('colorPath');
+      background-color: themed('colorComponent');
+    }
+    width: -webkit-fill-available;
+    top: 110%;
+    z-index: 10;
+    left: -1px;
+  }
+
+  &__item {
+    padding: 12px 17px;
+    cursor: pointer;
+    border-bottom: 1px solid #d5d5d5;
+    display: flex;
+    gap: 4px;
+  }
+
+  &__item:hover {
+    background: #0084ff;
+    color: #ffffff;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  &__label {
+    // width: 125px;
+    max-width: 125px;
+    max-height: 42px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  // &__helper{
+  //     position: absolute;
+  //     top: 110%;
+  //     color: #B5B5B5;
+  //     left: 0px;
+  // }
+
+  &__error {
+    position: absolute;
+    top: 110%;
+    color: #e92c2c;
+    left: 0px;
+  }
+  svg path {
+    @include themify($themes) {
+      stroke: themed('colorPath');
+    }
+  }
+}

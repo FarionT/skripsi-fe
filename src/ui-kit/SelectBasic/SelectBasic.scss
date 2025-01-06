@@ -1,0 +1,33 @@
+@import 'ui-kit/styles';
+
+.concise-SelectBasic {
+    $this: &;
+    @include inter-12-regular;
+    border: 1px solid $color-grey-outline;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+    background-color: inherit;
+    color: inherit;
+  
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+    }
+  
+    &:disabled {
+      @include themify($themes) {
+        background-color: themed('disabledBackground');
+      }
+      pointer-events: none;
+    }
+  
+    &::placeholder {
+      color: $color-grey-placeholder;
+    }
+  
+    &#{$this}__error {
+      border-color: $color-danger !important;
+    }
+  }

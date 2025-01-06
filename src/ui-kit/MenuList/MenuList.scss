@@ -1,0 +1,175 @@
+@import 'ui-kit/styles';
+
+.menuHeader {
+  @include inter-14-medium;
+  &Pareng {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-grey-outline;
+    padding-bottom: 18px;
+    position: relative;
+  }
+}
+
+.dropdown-content {
+  z-index: 1;
+  visibility: unset !important;
+  min-width: 180px;
+  border: 1px solid $color-grey-outline;
+  border-radius: 8px;
+  margin-top: 8px;
+  @include themify($themes) {
+    background-color: themed('inputBackgroundColor');
+    color: themed('textColor');
+    svg path {
+      fill: themed('textColor');
+    }
+  }
+}
+
+.dropdown:is(:not(details)) .dropdown-content {
+  display: none;
+}
+
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+.sidebarMenu-Content {
+  // overflow: auto;
+  @include scroll-none;
+}
+
+.menuListUl {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &-child {
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    
+    // border-left: 1px solid $color-grey-outline;
+    &-open {
+      display: block;
+      position: absolute;
+      left: 50px;
+    }
+  }
+}
+
+.menuHeader_Toggle {
+  cursor: pointer;
+  @include themify($themes) {
+    svg path {
+      stroke: themed('textColor');
+    }
+  }
+}
+
+.tooltip-custom {
+  --tooltip-color: #f2feff !important;
+  --tooltip-text-color: #353535 !important;
+}
+
+.tooltip::before {
+  padding: 12px !important;
+  border-radius: 8px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 18px !important;
+}
+
+.menuUrl {
+  @include inter-14-medium;
+  display: flex;
+  align-items: center;
+  object-fit: contain;
+  padding: 8px;
+  border-radius: 8px;
+  gap: 4px !important;
+  outline: none !important;
+  svg path {
+    fill: $color-main-black !important;
+  }
+
+  svg.isStroke path {
+    fill: unset !important;
+    stroke: $color-main-black;
+  }
+
+  &:hover {
+    border-radius: 7px;
+    color: $color-primary !important;
+    font-weight: 700;
+    svg path {
+      fill: $color-primary !important;
+    }
+
+    svg.isStroke path {
+      fill: unset !important;
+      stroke: $color-primary;
+    }
+  }
+
+  &-parent {
+    cursor: pointer;
+    user-select: none;
+    pointer-events: unset;
+    justify-content: space-between;
+  }
+
+  &-iconRight, &-iconRow {
+    transition: 0.15s ease-in-out;
+  }
+
+  &-iconLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.dropdown:focus-within .menuUrl-iconRow{
+  transform: rotate(3.142rad);
+}
+
+details[open] summary .menuUrl-iconRight {
+  transform: rotate(3.142rad);
+}
+
+.menuActiveUrl {
+  color: $color-primary !important;
+  font-weight: 700;
+  svg path {
+    fill: $color-primary !important;
+  }
+
+  svg.isStroke path {
+    fill: unset !important;
+    stroke: $color-primary;
+  }
+}
+
+summary {
+  $this: &;
+  .menuUrl-iconRight {
+    svg path {
+      fill: unset !important;
+      stroke: $color-main-black;
+    }
+  }
+
+  &.menuActiveUrl .menuUrl-iconRight,
+  &:hover .menuUrl-iconRight {
+    svg path {
+      fill: unset !important;
+      stroke: $color-primary;
+    }
+  }
+}

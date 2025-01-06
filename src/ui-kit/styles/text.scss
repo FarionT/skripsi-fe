@@ -1,0 +1,348 @@
+@use "sass:math";
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/Helvetica.ttf') format('ttf');
+  font-weight: normal;  // or bold, etc.
+  font-style: normal;   // or italic, etc.
+}
+$base-font-family: 'Helvetica';
+
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@mixin fluid-type($min-font-size, $max-font-size, $min-line-height, $max-line-height) {
+  $min-vw: 768px;
+  $max-vw: 1024px;
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+  $u5: unit($min-line-height);
+  $u6: unit($max-line-height);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 and $u1 == $u5 and $u1 == $u6 {
+    & {
+      font-size: $min-font-size;
+      line-height: $min-line-height;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+        line-height: calc(
+          #{$min-line-height} + #{strip-unit($max-line-height - $min-line-height)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+        line-height: $max-line-height;
+      }
+    }
+  }
+}
+@mixin inter-8-semibold {
+  font-family: $base-font-family;
+  line-height: 12px;
+  font-size: 8px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-10-regular {
+  font-family: $base-font-family;
+  line-height: 16px;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-10-medium {
+  font-family: $base-font-family;
+  line-height: 16px;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-10-semibold {
+  font-family: $base-font-family;
+  line-height: 16px;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-10-bold {
+  font-family: $base-font-family;
+  line-height: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-12-regular {
+  font-family: $base-font-family;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-12-medium {
+  font-family: $base-font-family;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-12-semibold {
+  font-family: $base-font-family;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-12-bold {
+  font-family: $base-font-family;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-14-regular {
+  font-size: 14px;
+  font-family: $base-font-family;
+  // @include fluid-type(10px, 14px, 16px, 20px);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-14-medium {
+  font-size: 14px;
+  font-family: $base-font-family;
+  // @include fluid-type(10px, 14px, 16px, 20px);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-14-semibold {
+  font-size: 14px;
+  font-family: $base-font-family;
+  // @include fluid-type(10px, 14px, 16px, 20px);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-14-bold {
+  font-size: 14px;
+  font-family: $base-font-family;
+  // @include fluid-type(10px, 14px, 16px, 20px);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-16-regular {
+  font-size: 16px;
+  font-family: $base-font-family;
+  // @include fluid-type(12px, 16px, 18px, 24px);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-16-medium {
+  font-size: 16px;
+  font-family: $base-font-family;
+  // @include fluid-type(12px, 16px, 18px, 24px);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-16-semibold {
+  font-size: 16px;
+  font-family: $base-font-family;
+  // @include fluid-type(12px, 16px, 18px, 24px);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-16-bold {
+  font-size: 16px;
+  font-family: $base-font-family;
+  // @include fluid-type(12px, 16px, 18px, 24px);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-18-regular {
+  font-size: 18px;
+  font-family: $base-font-family;
+  // @include fluid-type(14px, 18px, 20px, 26px);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-18-medium {
+  font-size: 18px;
+  font-family: $base-font-family;
+  // @include fluid-type(14px, 18px, 20px, 26px);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-18-semibold {
+  font-size: 18px;
+  font-family: $base-font-family;
+  // @include fluid-type(14px, 18px, 20px, 26px);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-18-bold {
+  font-size: 18px;
+  font-family: $base-font-family;
+  // @include fluid-type(14px, 18px, 20px, 26px);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-20-regular {
+  font-family: $base-font-family;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-20-medium {
+  font-family: $base-font-family;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-20-semibold {
+  font-family: $base-font-family;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-20-bold {
+  font-family: $base-font-family;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-24-regular {
+  font-size: 24px;
+  font-family: $base-font-family;
+  // @include fluid-type(16px, 24px, 24px, 36px);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-24-medium {
+  font-size: 24px;
+  font-family: $base-font-family;
+  // @include fluid-type(16px, 24px, 24px, 36px);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-24-semibold {
+  font-size: 24px;
+  font-family: $base-font-family;
+  // @include fluid-type(16px, 24px, 24px, 36px);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-24-bold {
+  font-size: 24px;
+  font-family: $base-font-family;
+  // @include fluid-type(16px, 24px, 24px, 36px);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-28-regular {
+  font-family: $base-font-family;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin inter-28-medium {
+  font-family: $base-font-family;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-28-semibold {
+  font-family: $base-font-family;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-28-bold {
+  font-family: $base-font-family;
+  line-height: 40px;
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-32-medium {
+  font-family: $base-font-family;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin inter-32-semibold {
+  font-family: $base-font-family;
+  line-height: 36px;
+  font-size: 32px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin inter-32-bold {
+  font-family: $base-font-family;
+  line-height: 36px;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-40-bold {
+  font-size: 40px;
+  font-family: $base-font-family;
+  // @include fluid-type(28px, 40px, 40px, 48px);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin inter-80-bold {
+  font-size: 80px;
+  font-family: $base-font-family;
+  // @include fluid-type(45px, 80px, 56px, 90px);
+  font-weight: 900;
+  font-style: normal;
+}

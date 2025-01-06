@@ -1,0 +1,234 @@
+@import 'ui-kit/styles';
+
+.conciseTableContainer {
+  border-bottom: 1px solid $color-grey-outline;
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  @include scroll-default;
+  &.useFilter {
+    border-radius: 8px;
+  }
+  z-index: 0;
+
+  &-tableBorder {
+    border: 1px solid $color-grey-outline;
+    border-radius: 8px;
+  }
+}
+
+.fit-cell {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.conciseTable {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 8px;
+
+  &.table-pin-row,
+  thead {
+    @include themify($themes) {
+      background-color: themed('bodyBackgroundColor');
+      color: themed('textColor');
+    }
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+  }
+  &.table-pin-row,
+  tfoot {
+    @include themify($themes) {
+      background-color: themed('bodyBackgroundColor');
+      color: themed('textColor');
+    }
+    position: sticky;
+    bottom: 0px;
+  }
+  .conciseTableTH {
+    @include inter-12-semibold;
+    background-color: $color-grey-background;
+    border-bottom: 3px solid $color-grey-outline;
+    padding: 12px 16px;
+    min-width: max-content;
+    &Compact {
+      height: fit-content;
+    }
+    &Content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .conciseTableTd {
+    @include inter-12-regular;
+    margin: 16px;
+    height: 36px;
+    &Compact {
+      height: fit-content;
+      min-width: 95px;
+    }
+  }
+  tr {
+    border-bottom: 1px solid $color-grey-outline;
+    &:last-child {
+      border-bottom: none;
+    }
+    background-color: #fff;
+  }
+  .nodata {
+    @include inter-12-regular;
+    color: $color-grey-placeholder;
+    margin: 16px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // Row Striping
+  &.table-strip-rows {
+    tr:nth-child(odd) {
+      background-color: #d0e9ff;
+    }
+  }
+
+  // Column Border
+  &.table-border-column {
+    td,
+    th {
+      border-right: 1px solid $color-grey-outline;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.Actions {
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: -5px;
+  }
+
+  &-icon {
+    transition: transform 0.25s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-disabled {
+    svg path {
+      fill: $color-grey-disabled;
+    }
+  }
+
+  &-detailIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    svg path {
+      fill: $color-primary;
+    }
+    // &:hover {
+    //   svg path {
+    //     fill: $color-primary-pressed;
+    //   }
+    // }
+  }
+  &-editIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    svg path {
+      fill: $color-primary;
+    }
+    // &:hover {
+    //   svg path {
+    //     fill: $color-primary-pressed;
+    //   }
+    // }
+  }
+  &-deleteIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    svg path {
+      fill: $color-danger;
+    }
+    // &:hover {
+    //   svg path {
+    //     fill: $color-danger-pressed;
+    //   }
+    // }
+  }
+  &-timeIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    svg path {
+      fill: $color-primary;
+    }
+    // &:hover {
+    //   svg path {
+    //     fill: $color-primary-pressed;
+    //   }
+    // }
+  }
+  &-exportIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    svg path {
+      fill: $color-primary;
+    }
+    // &:hover {
+    //   svg path {
+    //     fill: $color-primary-pressed;
+    //   }
+    // }
+  }
+}
+
+.tableFooter {
+  td {
+    padding: 0;
+  }
+  &Container {
+    border-top: 1px solid $color-grey-outline;
+  }
+}
+
+.DeleteModal {
+  &-modalContentText {
+    @include inter-14-regular;
+    color: $color-main-black;
+  }
+  &-modalContentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &-buttonContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-direction: row-reverse;
+    // margin-top: 24px;
+  }
+  &-buttonWrapper {
+    & > .Button {
+      width: 90px;
+    }
+  }
+  &-modalContainer {
+    margin-top: 24px;
+  }
+}

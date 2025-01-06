@@ -1,0 +1,77 @@
+@import 'ui-kit/styles';
+
+.breadcrumb-item > a {
+  color: $color-primary;
+}
+.breadcrumb-item > a:hover {
+  color: $color-primary-hovered;
+}
+.breadcrumb-item > a:focus {
+  color: rgba($color-primary-hovered, 0.2);
+}
+// .breadcrumb-item > a:visited {
+//   color: $color-grey-placeholder;
+// }
+
+.breadcrumb-item {
+  color: $color-grey-placeholder;
+}
+
+.breadcrumbs {
+  background-color: $color-main-white;
+  border-radius: 12px;
+
+  height: 48px;
+  @include inter-14-regular;
+  display: flex;
+
+  &default {
+    
+  }
+
+  &framed {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba($color-grey-outline, 0.3);
+  }
+
+  &Small {
+    @include inter-10-regular
+  }
+  &Medium {
+    @include inter-12-regular
+  }
+  &Large {
+    @include inter-14-regular
+  }
+}
+
+.backButton {
+  padding: 8px 24px 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-danger;
+  svg path {
+    fill: $color-danger;
+  }
+  cursor: pointer;
+}
+
+.separator-breadcrumb {
+  padding-right: 24px;
+  border-left: 1px solid $color-primary-outline;
+}
+
+.breadcrumbs > ul > li + *:before,
+.breadcrumbs > ol > li + *:before {
+  content: '/' !important;
+  border: none !important;
+  --tw-rotate: 0deg !important;
+  transform: none !important;
+  height: 20px !important;
+  width: 0 !important;
+  margin-left: 8px !important;
+  color: $color-main-black !important;
+  opacity: 1 !important;
+}

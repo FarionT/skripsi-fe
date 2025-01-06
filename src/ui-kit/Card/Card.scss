@@ -1,0 +1,310 @@
+@import 'ui-kit/styles';
+
+.conciseCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-grey-outline-transparent;
+  border-radius: 8px;
+  svg path {
+    @include themify($themes) {
+      fill: themed('colorPath');
+    }
+  }
+  &__Small {
+    .conciseCard__Title {
+      @include inter-16-medium;
+    }
+    .conciseCard__Content {
+      @include inter-12-regular;
+    }
+    .conciseCard__TitleProfile {
+      @include inter-16-regular;
+    }
+    .conciseCard__ContentProfile {
+      @include inter-12-regular;
+    }
+  }
+  &__Medium {
+    .conciseCard__Title {
+      @include inter-20-medium;
+    }
+    .conciseCard__Content {
+      @include inter-14-regular;
+    }
+    .conciseCard__TitleProfile {
+      @include inter-20-regular;
+    }
+    .conciseCard__ContentProfile {
+      @include inter-14-regular;
+    }
+  }
+  &__Large {
+    .conciseCard__Title {
+      @include inter-24-medium;
+    }
+    .conciseCard__Content {
+      @include inter-16-regular;
+    }
+    .conciseCard__TitleProfile {
+      @include inter-24-regular;
+    }
+    .conciseCard__ContentProfile {
+      @include inter-16-regular;
+    }
+  }
+
+  &__PrimarySurface {
+    @include themify($themes) {
+      background-color: themed('colorComponent');
+    }
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  }
+  &__SecondarySurface {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  }
+  &__NoSurface {
+    background-color: transparent;
+    box-shadow: none;
+    border: none !important;
+  }
+
+  &__Image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      border-radius: 8px 8px 0px 0px;
+      max-height: 200px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Product Section CSS
+  &__Product {
+    .conciseCard__Body {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      padding: 12px;
+      // gap: 8px;
+      @include min-width(small) {
+        padding: 24px;
+        // gap: 12px;
+      }
+      // .conciseCard__Title {
+      //   @include inter-20-regular;
+      // }
+      .conciseCard__Content {
+        // @include inter-14-regular;
+        margin-top: 8px;
+      }
+      .conciseCard__Heading {
+        @include inter-12-regular;
+        color: $color-primary;
+      }
+      .conciseCard__Footnote {
+        @include inter-12-regular;
+        color: $color-grey-placeholder;
+        margin-top: 12px;
+      }
+      .conciseCard__Icons {
+        margin-top: 12px;
+        display: flex;
+        gap: 16px;
+        justify-content: right;
+      }
+      .conciseCard__Icon:hover {
+        cursor: pointer;
+      }
+      .conciseCard__Actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+      }
+      .conciseCard__ProfileImage {
+        width: 156px;
+        height: 156px;
+        border-radius: 50%;
+        margin: 0 auto 32px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      // .conciseCard__TitleProfile {
+      //   @include inter-24-regular;
+      // }
+      .conciseCard__ContentProfile {
+        // @include inter-14-regular;
+        color: $color-grey-placeholder;
+        margin-top: 16px;
+      }
+    }
+    .conciseCard__BodyProfile {
+      text-align: center;
+      padding: 48px 32px;
+    }
+  }
+
+  &__BodyProfileHorizontal {
+    padding: 40px 32px !important;
+    .conciseCard__SubBodyProfileHorizontal {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      text-align: left;
+      align-items: center;
+    }
+    .conciseCard__ProfileImage {
+      margin: 0 !important;
+    }
+  }
+
+  // Editorial Section CSS
+  &__Editorial {
+    .conciseCard__Body {
+      padding: 48px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .conciseCard__SubBody {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .conciseCard__CardIcon {
+        width: 48px;
+        height: 48px;
+      }
+      // .conciseCard__Title {
+      //   @include inter-28-regular;
+      // }
+      .conciseCard__Heading {
+        @include inter-12-regular;
+      }
+      // .conciseCard__Content {
+      //   @include inter-14-regular;
+      // }
+      .conciseCard__Actions {
+        margin: auto;
+      }
+    }
+  }
+  &__Editorial.conciseCard__Horizontal {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 40px;
+    gap: 32px;
+    align-items: flex-start;
+    .conciseCard__Body {
+      padding: 0;
+      text-align: left;
+      width: auto;
+    }
+    .conciseCard__Image {
+      width: 100%;
+    }
+    .conciseCard__Image img {
+      width: 100%;
+      border-radius: 0 !important;
+      height: auto;
+    }
+  }
+
+  // Marketing Section CSS
+  &__Marketing {
+    .conciseCard__Body {
+      padding: 32px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .conciseCard__SubBody {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .conciseCard__CardIcon {
+        width: 48px;
+        height: 48px;
+        align-self: flex-start;
+      }
+      // .conciseCard__Title {
+      //   @include inter-20-regular;
+      // }
+      .conciseCard__Heading {
+        @include inter-12-regular;
+      }
+      // .conciseCard__Content {
+      //   @include inter-16-regular
+      // }
+      .conciseCard__Actions {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+      }
+    }
+  }
+  &__Marketing.conciseCard__Horizontal {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 24px;
+    gap: 32px;
+    align-items: flex-start;
+    .conciseCard__Body {
+      padding: 0;
+      text-align: left;
+      width: auto;
+    }
+    .conciseCard__Image {
+      width: 100%;
+    }
+    .conciseCard__Image img {
+      width: 100%;
+      border-radius: 0 !important;
+      height: auto;
+    }
+  }
+  &__Price {
+    @include inter-16-semibold;
+    text-align: right;
+  }
+
+  // &__Title {
+  //   @include inter-16-semibold;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   white-space: nowrap;
+  //   text-decoration: none;
+  // }
+  // &__Content {
+  //   @include inter-14-regular;
+  //   overflow: hidden;
+  //   display: -webkit-box;
+  //   -webkit-line-clamp: 2; /* number of lines to show */
+  //   line-clamp: 2;
+  //   // -webkit-box-orient: vertical;
+  // }
+
+  // &__Footnote {
+  //   @include inter-14-regular;
+  //   color: $color-grey-placeholder;
+  // }
+  // &__Tags {
+  //   display: flex;
+  //   flex-direction: row;
+  //   gap: 4px;
+  //   overflow-x: auto;
+  //   @include scroll-none;
+  // }
+  // &__Actions {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   align-items: flex-start;
+  //   justify-content: flex-end;
+  //   gap: 8px;
+  // }
+}

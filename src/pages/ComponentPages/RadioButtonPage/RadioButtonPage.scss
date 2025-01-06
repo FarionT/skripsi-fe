@@ -1,0 +1,107 @@
+@import 'ui-kit/styles';
+
+.concise-component-radio {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+
+  &-text {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+
+  &-bg {
+    &-grey {
+      background-color: #F5F5F5;
+      padding: 20px 100px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+  
+    &-white {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      width: 148px
+    }
+
+    &-inline {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      width: 372px;
+    }
+  
+    &-stacked {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 372px;
+    }
+  }
+
+  &-heading {
+    @include inter-24-medium;
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+
+  &-orientation {
+    @include inter-20-medium;
+    margin-bottom: 24px;
+
+    &-text {
+      @include inter-16-medium;
+      margin-bottom: 8px;
+    }
+  }
+
+  &-label {
+    @include inter-20-medium;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+
+  &-variation {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

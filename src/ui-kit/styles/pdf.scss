@@ -1,0 +1,70 @@
+.table-pdf {
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #c0e1ff;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+.form-pdf {
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    width: 100%;
+    .left {
+      text-align: left;
+      &-column {
+        width: 60%;
+        &.cell {
+          width: 25%;
+        }
+      }
+    }
+    .right {
+      text-align: right;
+      &-column {
+        width: 50%;
+        &.cell {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.sign-pdf {
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10px;
+    width: 100%;
+    .left {
+      text-align: left;
+    }
+    .right {
+      text-align: right;
+    }
+
+    .sign-field {
+      text-align: center;
+
+      .sign-head {
+        padding-bottom: 7rem;
+      }
+    }
+  }
+}
+
+.w-100 {
+  width: 100%;
+}

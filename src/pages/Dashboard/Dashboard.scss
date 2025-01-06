@@ -1,0 +1,47 @@
+@import 'ui-kit/styles';
+
+.dashboard-data {
+  .dashboard-content {
+    .dashboard-title,
+    .dashboard-subtitle {
+      margin-bottom: 16px;
+    }
+
+    .dashboard-items {
+      &:has(.dashboard-item-status) {
+        flex-wrap: wrap;
+      }
+
+      .dashboard-item {
+        &.dashboard-item-status {
+          flex: unset;
+          min-width: unset;
+          max-width: unset;
+          width: 22% !important;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 32px
+      }
+    }
+
+    .dashboard-subtitle,
+    .church-parish,
+    .church-status {
+      @include inter-20-regular;
+    }
+
+    .church-total-prodiakon {
+      color: $color-primary-pressed;
+      @include inter-28-bold;
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .dashboard-data .dashboard-content .dashboard-items .dashboard-item.dashboard-item-status {
+    width: 100% !important;
+  }
+}

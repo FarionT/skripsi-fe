@@ -1,0 +1,174 @@
+@import 'ui-kit/styles';
+
+.concise-component-switch {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold; 
+  }
+
+  &-subtitle {
+    @include inter-20-medium;
+    margin-bottom: 48px;
+  }
+
+  &-text {
+    @include inter-16-regular;
+    margin-top: 48px;
+    margin-bottom: 56px;
+
+    &-left {
+      @include inter-20-medium;
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: center;
+    }
+
+    &-right {
+      @include inter-20-medium;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 12px;
+      align-items: center;
+    }
+
+    &-top {
+      @include inter-20-medium;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 12px;
+      align-items: center;
+    }
+
+    &-small {
+      @include inter-14-semibold;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-bg {
+    &-grey {
+      background-color: #F5F5F5;
+      padding: 20px 100px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &-white {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: 114px;
+      flex-direction: column;
+    }
+
+    &-behaviors {
+      background-color: #F5F5F5;
+      padding: 20px 100px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    &-states {
+      background-color: #FFF;
+      padding: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      width: 208px;
+      height: 78px;
+      flex-direction: column;
+    }
+  }
+
+  &-label {
+    @include inter-18-medium;
+    margin-bottom: 48px;
+  }
+
+  &-line {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-list {
+    width: 352px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-behavior {
+    @include inter-20-medium;
+    margin-bottom: 48px;
+    margin-top: 56px;
+  }
+
+
+
+
+
+
+
+
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+
+  &-variant {
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    &-status {
+      @include inter-16-medium;
+      margin-top: 20px;
+      justify-self: flex-end;
+    }
+  
+    &-number {
+      @include inter-16-medium;
+      margin-top: 32px;
+      justify-self: flex-end;
+    }
+  }
+
+  &-status {
+    @include inter-20-medium;
+    margin-bottom: 24px;
+  }
+
+  &-state {
+    @include inter-18-medium;
+    margin-bottom: 24px;
+  }
+}

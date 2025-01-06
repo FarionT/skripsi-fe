@@ -1,0 +1,22 @@
+@import 'ui-kit/styles';
+
+.menuRowUl {
+  gap: 8px;
+  padding: 0px;
+  &-child {
+    top: 40px;
+    margin: 38px 0px 0px;
+    min-width: 180px;
+    border: 1px solid $color-grey-outline;
+    border-radius: 8px;
+    margin-top: 8px;
+    right: 0;
+    @include themify($themes) {
+      background-color: themed('bodyBackgroundColor');
+      color: themed('textColor');
+      svg path {
+        fill: themed('textColor');
+      }
+    }
+  }
+}

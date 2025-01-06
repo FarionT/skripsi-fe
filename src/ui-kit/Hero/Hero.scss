@@ -1,0 +1,37 @@
+@import 'ui-kit/styles';
+
+.conciseHero {
+  display: grid;
+  min-height: calc(100dvh - 64px);
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(28, 1fr);
+    @include inter-80-bold;
+  }
+  &__title1 {
+    grid-area: 2/2/100/100;
+
+    -webkit-text-stroke: 2px red;
+    @include themify($themes) {
+      color: themed('negativeTextColor');
+    }
+  }
+  &__title2 {
+    grid-area: 1/1/99/100;
+    @include themify($themes) {
+      color: themed('textColor');
+    }
+  }
+  &__body {
+    @include inter-24-regular;
+    padding: 32px 0px;
+  }
+}

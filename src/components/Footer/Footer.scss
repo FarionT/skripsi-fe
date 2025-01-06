@@ -1,0 +1,20 @@
+@import 'ui-kit/styles';
+
+.footer > *{
+  gap: 16px !important;
+}
+
+.footer {
+    column-gap: 40px !important;
+    row-gap: 40px !important;
+}
+
+.conciseFooter {
+  &Container {
+    padding: 80px 0px;
+    border-top: 1px solid $color-grey-outline;
+  }
+  &__title {
+    @include inter-16-semibold;
+  }
+}

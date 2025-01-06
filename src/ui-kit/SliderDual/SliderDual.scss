@@ -1,0 +1,296 @@
+@import 'ui-kit/styles';
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.sliderr {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 200px; // Adjusted width for the slider
+
+  &__values_input {
+    input[type='number'] {
+      background-color: transparent;
+      width: 52px;
+      margin-right: -23px;
+      margin-left: -19px;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 4px;
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 20px;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: auto;
+        appearance: auto;
+        margin: 0;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: #0084ff;
+        outline: none;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 8px; // Width of the arrow
+        height: 8px; // Height of the arrow
+        background-color: #0084ff;
+        pointer-events: none;
+      }
+
+      &::before {
+        top: 4px;
+        right: 10px;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 4px solid #0084ff;
+      }
+
+      &::after {
+        bottom: 4px;
+        right: 10px;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-top: 4px solid #0084ff;
+      }
+    }
+  }
+}
+
+.sliderr__track,
+.sliderr__range,
+.sliderr__left-value,
+.sliderr__right-value {
+  position: absolute;
+}
+
+.sliderr__track,
+.sliderr__range {
+  border-radius: 3px;
+  height: 2px;
+}
+
+.sliderr__track {
+  background-color: #d6d6d6;
+  width: 100%; // Track width
+  height: 8px;
+  z-index: 0;
+  border-radius: 18px;
+}
+
+.sliderr__range {
+  height: 7px;
+  background: linear-gradient(
+    to right,
+    $color-primary 0%,
+    $color-primary 50%,
+    $color-danger-hovered 50%,
+    $color-danger-hovered 100%
+  );
+  background-size: 100% 100%;
+  width: 70%; // Range width
+  background-position: left center;
+  transition: background-position 0.3s ease;
+  z-index: 0;
+  border-radius: 15px;
+}
+
+.sliderr__left-value,
+.sliderr__right-value {
+  font-size: 12px;
+  margin-top: 3.4em;
+}
+
+.sliderr__left-value {
+  left: 4px;
+}
+
+.sliderr__right-value {
+  right: -2px;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 100%; // Adjust as needed to position labels correctly
+  margin-top: 5px; // Adjust as needed
+}
+
+.slider-label {
+  font-size: 12px;
+}
+
+.slider-label--left {
+  text-align: left;
+}
+
+.slider-label--right {
+  text-align: right;
+}
+
+.thumb {
+  position: absolute;
+  height: 0;
+  width: 100%;
+  pointer-events: all;
+  z-index: 0;
+
+  &--left {
+    z-index: 5;
+    margin-top: 0px;
+    pointer-events: all;
+  }
+
+  &--right {
+    z-index: 0;
+    margin-top: 0px;
+    pointer-events: all;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border-radius: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    pointer-events: all;
+  }
+
+  &::-moz-range-thumb {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    pointer-events: all;
+  }
+
+  &--blue {
+    &::-webkit-slider-thumb {
+      background-color: $color-primary;
+      border: 1.5px solid $color-primary;
+    }
+    &::-moz-range-thumb {
+      background-color: $color-primary;
+      border: 1.5px solid $color-primary;
+    }
+  }
+
+  &--white {
+    &::-webkit-slider-thumb {
+      background-color: $color-main-white;
+      border: 1.5px solid $color-primary;
+    }
+    &::-moz-range-thumb {
+      background-color: $color-main-white;
+      border: 1.5px solid $color-main-white;
+    }
+  }
+}
+
+.sliderr-input {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+
+  &::-webkit-slider-thumb {
+    pointer-events: all;
+    appearance: none;
+    border-radius: 50%;
+    margin-top: -38px;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+  }
+
+  &::-moz-range-thumb {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+  }
+
+  &.active {
+    cursor: pointer;
+  }
+
+  &.deactive {
+    cursor: not-allowed;
+  }
+}
+
+.thumb {
+  &--blue::-webkit-slider-thumb,
+  &--blue::-moz-range-thumb {
+    background-color: $color-primary;
+    border: 1.5px solid $color-primary;
+  }
+
+  &--white::-webkit-slider-thumb,
+  &--white::-moz-range-thumb {
+    background-color: $color-main-white;
+    border: 1.5px solid $color-primary;
+  }
+}
+
+.tooltip {
+  $this: &;
+  position: absolute;
+  --tooltip-margin: 30px;
+  --tooltip-arrow-size: 8px;
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: opacity 0.3s;
+  opacity: 1;
+  -webkit-filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+
+  // Adjust the tooltip position to be above the thumb
+  top: -40px; // Adjust this value as needed
+  &::before {
+    content: ' ';
+    left: 50%;
+    border: var(--tooltip-arrow-size) solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    margin-left: calc(var(--tooltip-arrow-size) * -1);
+  }
+
+  // Tooltip arrow
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%; // Place it at the bottom of the tooltip box
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+}
+
+.tooltip--left,
+.tooltip--right {
+  top: -30px; // Keep this consistent with the tooltip top value
+}

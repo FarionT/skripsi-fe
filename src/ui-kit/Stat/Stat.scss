@@ -1,0 +1,34 @@
+@import 'ui-kit/styles';
+
+.conciseStat {
+  background: $color-grey-outline-transparent;
+  border-radius: 12px;
+  padding: 30px 32px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-row-gap: 30px;
+  @include min-width(small) {
+    padding: 30px 48px;
+  }
+  @include min-width(medium) {
+    padding: 40px 64px;
+  }
+  &Item {
+    display: grid;
+    grid-column: span 12 / span 12;
+    @include min-width(small) {
+      grid-column: span 6 / span 6;
+    }
+    @include min-width(medium) {
+      grid-column: span 3 / span 3;
+    }
+  }
+  &__title {
+  }
+  &__value {
+    @include inter-40-bold;
+  }
+  &__desc {
+    @include inter-18-regular;
+  }
+}

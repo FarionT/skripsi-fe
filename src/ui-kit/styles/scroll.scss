@@ -1,0 +1,16 @@
+@mixin scroll-default {
+  &::-webkit-scrollbar-track {
+  }
+
+  &::-webkit-scrollbar {
+  }
+
+  &::-webkit-scrollbar-thumb {
+  }
+}
+
+@mixin scroll-none {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

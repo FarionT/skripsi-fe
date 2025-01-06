@@ -1,0 +1,19 @@
+@import 'ui-kit/styles';
+
+.jadwal-misa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.jadwal-misa-body {
+  margin-bottom: 24px;
+}
+
+.jadwal-misa-footer {
+  display: flex;
+  gap: 10px;
+}

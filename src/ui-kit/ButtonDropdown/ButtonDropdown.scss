@@ -1,0 +1,11 @@
+.join-item {
+    .Button {
+        border-end-start-radius: 0;
+        border-start-start-radius: 0;
+        min-height: 36px;
+    }
+}
+
+.dropdown:focus-within .Button-right {
+    transform: rotate(3.142rad);
+  }

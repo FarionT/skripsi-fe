@@ -1,0 +1,76 @@
+@import 'ui-kit/styles';
+
+.concise-component-popover {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+  &-subsubtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 14px;
+    }
+  }
+  &-bg-grey {
+    background-color: $color-grey-background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-column {
+      padding: 20px 100px;
+      flex-direction: column;
+      gap: 28px;
+    }
+    &-row {
+      padding: 140px 100px;
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+  &-variations {
+    @include inter-24-regular;
+  }
+  &-variants {
+    @include inter-20-regular;
+    margin-top: 24px;
+  }
+  &-trigger {
+    @include inter-14-regular;
+    border: 2px solid $color-main-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    min-width: 100px;
+    cursor: pointer;
+    &:hover {
+      color: $color-main-white;
+      background-color: $color-main-black;
+      transition: all 0.3s;
+    }
+  }
+  &-layout {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    background-color: $color-grey-background;
+  }
+}

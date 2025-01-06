@@ -1,0 +1,431 @@
+@import 'ui-kit/styles';
+
+#root {
+}
+
+.layout-wrapper {
+  position: relative;
+  min-height: 100vh;
+  @include themify($themes) {
+    background-color: themed('bodyBackgroundColor');
+    color: themed('textColor');
+  }
+
+  .app-version {
+    @include inter-12-regular;
+    color: $color-grey-placeholder;
+  }
+
+  .frame {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 40px;
+
+    .data {
+      background-color: $color-main-white;
+      border: 1px solid $color-primary-outline;
+      border-radius: 8px;
+
+      min-height: calc(100vh - 140px);
+      padding: 24px;
+
+      &:has(.coming-soon) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .content {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .header:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      .subheader {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        
+        margin-bottom: 24px;
+      }
+
+      .filter {
+        display: flex;
+        gap: 24px;
+
+        width: 100%;
+        max-width: 768px;
+        
+        .filter-item {
+          width: 100%;
+
+          .FormField {
+            .FormField-Header {
+              display: none;
+            }
+            input {
+              padding: 12px 30px 12px 12px;
+            }
+          }
+
+          .filter-button {
+            background-color: transparent;
+            border-color: $color-primary-outline;
+            color: $color-grey-placeholder;
+
+            .Icon svg path {
+              stroke: unset;
+              fill: $color-grey-placeholder;
+            }
+          }
+
+          .filter-button:has(.filter-button-tags) {
+            color: $color-main-black;
+
+            .Icon svg path {
+              stroke: unset;
+              fill: $color-main-black;
+            }
+          }
+
+          .concise-SelectSingleIcon {
+            padding: 5px 12px 0px;
+
+            .Icon svg path {
+              fill: unset;
+              stroke: $color-grey-placeholder;
+            }
+          }
+        }
+      }
+
+      .title {
+        color: $color-main-black;
+        @include inter-24-bold;
+      }
+
+      .subtitle {
+        margin-bottom: 16px;
+      }
+
+      .items {
+        display: flex;
+        gap: 24px;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          background-color: $color-primary-surface;
+          border-radius: 12px;
+          box-shadow: 0px 2px 4px 0px #0000001f;
+
+          width: 100%;
+          padding: 16px;
+
+          color: $color-main-black;
+
+          .church-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            @include inter-20-bold;
+
+            .Icon {
+              padding: 0px;
+
+              svg {
+                width: 16px !important;
+                height: 16px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:has(.prodiakon-mobile) {
+    width: 100;
+    max-width: 425px;
+
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .layout-wrapper:has(.sidebar_close)::after {
+    display: none;
+  }
+  
+  .layout-wrapper:has(.sidebar):has(:not(.sidebar_close))::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+  
+    content: '';
+    z-index: 11;
+  }
+
+  .items .item {
+    flex: unset !important;
+    min-width: unset !important;
+    width: 100% !important;
+    max-width: unset !important;
+  }
+
+  .layout-wrapper .frame .content .filter {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Responsive adjustments */
+$responsive-gap: 24px;    // Gap between child divs
+$min-width: 250px;         // Minimum width for each child div
+
+.items {
+  display: flex;
+  flex-wrap: wrap; // Allows the divs to wrap into the next row when needed
+  gap: $responsive-gap;
+
+  .item {
+    flex: 1 1 $min-width; // Flex-grow, flex-shrink, and min-width
+    min-width: $min-width;
+    max-width: calc(50% - #{$responsive-gap} / 2); // Ensures 2 items per row if space permits
+  }
+}
+
+.powered-by {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  @include inter-10-regular;
+
+  .powered-by-logo {
+    width: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.form {
+  .form-section {
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-tertiary;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+    }
+
+    .form-section-title {
+      margin-bottom: 24px;
+
+      color: $color-primary;
+      @include inter-20-bold;
+    }
+    
+    .form-subsection {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      .form-subsection-title {
+        margin-bottom: 12px;
+        @include inter-20-medium;
+      }
+    }
+  }
+
+  .form-row {
+    display: flex;
+    gap: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .form-button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  .FormField {
+    width: 100%;
+
+    .FormField-Label {
+      @include inter-14-semibold;
+
+      .FormField-LabelRequired {
+        color: $color-danger;
+      }
+    }
+
+    .concise-textarea,
+    .concise-input {
+      background-color: $color-main-white;
+      border: 1px solid $color-primary-outline;
+      @include inter-12-regular;
+    }
+
+    .concise-SelectSingle {
+      background-color: $color-main-white;
+
+      input {
+        border: 1px solid $color-primary-outline;
+        cursor: pointer;
+      }
+    }
+
+    &.church-postal-code {
+      width: 25%;
+    }
+
+    &:has(.FormField-Trailing) .concise-input {
+      border-right: 0px;
+    }
+  }
+
+  .Button {
+    span {
+      font-weight: 600 !important;
+    }
+  }
+
+  .form-hidden {
+    opacity: 0;
+
+    .concise-SelectSingle input {
+      cursor: default !important;
+    }
+  }
+}
+
+.action-td {
+  display: flex;
+  .Icon {
+    cursor: pointer;
+  }
+}
+
+.auth-main-logo {
+  height: 100px;
+  aspect-ratio: 1/1;
+  margin: 0 auto 24px;
+}
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  color: $color-primary-pressed;
+  @include inter-32-bold;
+}
+
+.conciseModal {
+  background-color: $color-main-white !important;
+
+  width: 100%;
+  max-width: 450px;
+  padding: 24px;
+
+
+  &.conciseModalBig {
+    max-width: 768px;
+  }
+
+  .conciseModal__header {
+    margin-bottom: 24px;
+  }
+
+  .conciseModal__content {
+    min-width: unset;
+    width: 100%;
+    padding-top: 0px;
+  }
+
+  .subtitle {
+    @include inter-14-medium;
+  }
+
+  .form-button {
+    margin-top: 36px;
+  }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: $color-primary-focused;
+}
+
+::selection {
+  background: $color-primary-focused;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
+}
+
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(229, 229, 229, 0.8);
+  top: 0;
+  z-index: 999;
+}
+
+.loader-progres {
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// CUSTOM SCSS
+.Button {
+  height: 36px;
+}
+
+.conciseModal__content {
+  max-height: unset;
+}

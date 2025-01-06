@@ -1,0 +1,281 @@
+@import 'ui-kit/styles';
+
+.FormField {
+  $this: &;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  &-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-TextAreaCount {
+    @include inter-10-regular;
+    color: $color-grey-placeholder;
+  }
+  &-InputWrapper {
+    $this: &;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:has(input[type="password"]) {
+      border-width: 1px;
+      border-style: solid;
+      border-color:  $color-primary-outline;
+      border-radius: 8px;
+
+      .FormField-RightIcons {
+        cursor: pointer;
+      }
+
+      .concise-input {
+        border: 0px;
+      }
+
+      .concise-input:focus {
+        box-shadow: none;
+      }
+
+      &:has(.concise-input:focus) {
+        box-shadow: 0 0 0 2px rgba($color-primary-outline, 0.2);
+      }
+
+      &:has(.concise-input.input__error) {
+        border-color: $color-danger-outline !important;
+
+        &:has(.concise-input:focus) {
+          box-shadow: 0 0 0 2px rgba($color-danger, 0.2);
+        }
+      }
+    }
+
+    .FormField-RightIcons:has(.Icon) {
+      top: 50%;
+      right: 1px;
+      transform: translateY(-50%);
+      background-color: $color-main-white;
+      border-radius: 0px 8px 8px 0px;
+      height: calc(100% - 2px);
+    }
+  }
+  &-Leadingsmall {
+    @include inter-12-regular;
+    border-radius: 8px 0 0 8px;
+    padding: 4px;
+    border: 1px solid $color-grey-outline;
+    @include themify($themes) {
+      background-color: themed('backgroundComponent');
+    }
+  }
+  &-Leadingmedium {
+    @include inter-12-regular;
+    padding: 9px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid $color-grey-outline;
+    @include themify($themes) {
+      background-color: themed('backgroundComponent');
+    }
+  }
+  &-Leadinglarge {
+    @include inter-12-regular;
+    padding: 12px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid $color-primary-outline;
+    @include themify($themes) {
+      background-color: themed('inputBackgroundColor');
+    }
+  }
+
+  &-Trailing {
+    @include inter-12-regular;
+    border-radius: 0 8px 8px 0;
+    padding: 12px;
+    border: 1px solid $color-primary-outline;
+    @include themify($themes) {
+      background-color: themed('backgroundComponent');
+    }
+  }
+  &-Label {
+    @include inter-14-semibold;
+  }
+  &_LabelLarge {
+    @include inter-16-semibold;
+  }
+  &_LabelMedium {
+    @include inter-14-semibold;
+  }
+  &_LabelSmall {
+    @include inter-12-semibold;
+  }
+
+  &-Input {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05) !important;
+    padding-right: 30px;
+  }
+
+  &-LeadingIconsmall {
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid $color-grey-outline;
+    border-right: none;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    svg path {
+      fill: $color-grey-placeholder !important;
+    }
+  }
+  &-LeadingIconmedium {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid $color-grey-outline;
+    border-right: none;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    svg path {
+      fill: $color-grey-placeholder !important;
+    }
+    @include themify($themes) {
+      background-color: themed('bodyBackgroundColor');
+      color: themed('textColor');
+    }
+  }
+  &-LeadingIconlarge {
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid $color-grey-outline;
+    border-right: none;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    svg path {
+      fill: $color-grey-placeholder !important;
+    }
+  }
+
+  &-RightIcons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-TrailingIcon {
+    svg path {
+      fill: $color-grey-placeholder !important;
+    }
+  }
+  &_IconLoading {
+    -webkit-animation: loading-spin 0.75s linear infinite;
+    animation: loading-spin 0.75s linear infinite;
+  }
+  &-TextArea {
+    position: relative;
+    &MessageIcon {
+      position: absolute;
+    }
+  }
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ErrorMessage {
+  @include inter-12-regular;
+  color: $color-danger;
+}
+.WarningMessage {
+  @include inter-12-regular;
+  color: #f98600;
+}
+.SuccessMessage {
+  @include inter-12-regular;
+  color: #00ba34;
+}
+
+
+// CUSTOM SCSS
+.FormField-InputWrapper:has(input.input__error) .FormField-Trailing,
+.FormField-InputWrapper:has(input.input__error) .FormField-LeadingIconlarge,
+.FormField-InputWrapper:has(input.input__error) .FormField-Leadinglarge {
+  border-color: $color-danger !important;
+}
+
+.FormField-LeadingIconlarge {
+  border: 1px solid $color-primary-outline;
+  border-right: 0px;
+}
+
+.FormField-InputWrapper:has(.FormField-LeadingIconlarge) input {
+  border-left: 0px !important;
+  padding-left: 0px;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.FormField-InputWrapper:has(.FormField-Leadinglarge) .concise-input {
+  border-left: 0px !important;
+}
+
+.FormField-InputWrapper:has(.FormField-Leadinglarge) .concise-input:focus {
+  box-shadow: none;
+}
+
+.FormField-InputWrapper:has(.FormField-Trailing) input {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.FormField-InputWrapper:has(.FormField-LeadingIconlarge):has(input:focus),
+.FormField-InputWrapper:has(.FormField-Trailing):has(input:focus),
+.FormField-InputWrapper:has(.FormField-Leadinglarge):has(.concise-input:focus) {
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px rgba($color-primary, 0.2) !important;
+}
+
+.FormField-InputWrapper:has(.FormField-LeadingIconlarge):has(input.input__error:focus),
+.FormField-InputWrapper:has(.FormField-Leadinglarge):has(input.input__error:focus),
+.FormField-InputWrapper:has(.FormField-Trailing):has(input.input__error:focus) {
+  box-shadow: 0 0 0 2px rgba($color-danger, 0.2) !important;
+}
+
+.FormField-InputWrapper:has(.FormField-Trailing):has(input.input__error) .FormField-RightIcons {
+  right: 20%;
+}
+
+.FormField-Count {
+  @include inter-10-regular;
+  color: $color-grey-placeholder;
+}
+
+.FormField-CountError {
+  @include inter-10-bold;
+  color: $color-danger
+}
+
+.FormField:has(.ErrorMessage) .dropdown:has(.concise-SelectMulti) {
+  border: 1px solid $color-danger
+}

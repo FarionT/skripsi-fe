@@ -1,0 +1,274 @@
+@import 'ui-kit/styles';
+
+.concise_page {
+  position: relative;
+  display: flex;
+  gap: 0;
+
+  height: 100vh;
+}
+
+.page_content {
+  width: calc(100vw - 102px);
+  transition: all 0.5s ease;
+  overflow-y: scroll;
+  
+  &_open {
+    width: calc(100vw - 280px);
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 100vh;
+  padding: 32px 24px;
+  transition: all 0.5s ease;
+
+  @include themify($themes) {
+    background-color: themed('sidebarBackgroudColor');
+    color: themed('textColor');
+  }
+}
+
+.sidebarHeader {
+  $this: &;
+  height: 75px;
+
+  &_Wrapper {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  &_Title {
+    margin-left: 12px;
+
+    color: $color-primary;
+    @include inter-12-bold;
+  }
+
+  &_Logo {
+    width: 70px;
+    object-fit: contain;
+  }
+}
+
+// Sidebar no logo styling
+.sidebar_no_logo {
+  .sidebarMenu {
+    min-height: calc(100vh - 175px);
+  }
+}
+
+
+// Sidebar Close Styling
+.sidebar_close {
+  width: 102px;
+  border-right: 1px solid $color-grey-outline;
+  .sidebarHeader {
+    justify-content: center;
+    &_Title {
+      display: none;
+    }
+  }
+  .sidebarMenu {
+    .menuHeaderPareng {
+      align-items: center;
+      justify-content: center;  
+    }
+  }
+  &.sidebar_no_logo {
+    .sidebarMenu {
+      // max-height: calc(100vh - 240.8px); //100% screen height - header height and footer height
+      // min-height: calc(100vh - 240.8px); 
+    }
+  }
+
+  .menuUrl {
+    padding: 10px;
+    justify-content: center;
+    &-parents {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+    }
+    &-child {
+      position: absolute;
+    }
+  }
+  
+  .menuName { 
+    display: none;
+  }
+  
+  .sidebarFooter {
+    &_Items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    &_Item {
+      justify-content: center;
+    }
+    &_Logout {
+      padding: 8px;
+      justify-content: center;
+      border: none;
+      &Name, &Position, &Version {
+        display: none;
+      }
+    }
+  }
+}
+
+.sidebarMenu {
+  width: 100%;
+  min-height: calc(100vh - 300px);
+  overflow-y: auto;
+  overflow-x: visible;
+  @include scroll-none;
+  .menuName-Parent {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .menuUrl {
+    position: relative;
+  }
+  .menuHeader_Toggle {
+    transition: all 0.5s;
+    // transform: rotate(3.14rad);
+  }
+  .menuHeader_ToggleOpen {
+    transform: rotate(3.14rad);
+    transition: all 0.5s;
+  }
+}
+
+.sidebarFooter {
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid $color-grey-outline;
+  text-align: left;
+  &_Header {
+    @include inter-14-medium;
+    padding-top: 24px;
+  }
+  &_Items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &_Item {
+    @include inter-14-medium;
+    display: flex ;
+    padding: 8px;
+    gap: 8px;
+    align-items: center;
+    &:hover {
+      border-radius: 7px;
+      background-color: $color-primary-hovered !important;
+      color: $color-primary !important;
+      svg path {
+        fill: $color-primary !important;
+      }
+    }
+  }
+  &_Logout {
+    display: flex;
+    border: 1px solid $color-grey-outline;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 16px;
+    border-radius: 8px;
+    padding: 16px;
+
+    svg path {
+      stroke: $color-danger-icon !important;
+    }
+    &:hover {
+      border-radius: 7px;
+      svg path {
+        stroke: $color-danger-icon !important;
+      }
+    }
+    &Name {
+      margin-bottom: 5px;
+
+      color: $color-main-black;
+      @include inter-14-semibold;
+    }
+    &Position {
+      margin-bottom: 5px;
+
+      color: $color-primary;
+      @include inter-12-regular;
+    }
+  }
+
+  @include themify($themes) {
+    svg path {
+      stroke: themed('textColor');
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .concise_page {
+    flex-direction: column;
+    height: calc(100vh - 75px);
+  }
+
+  .sidebar {
+    position: absolute;
+    top: -75px;
+    left: 0px;
+    z-index: 255;
+  }
+
+  .sidebarHeader {
+    display: none;
+  }
+
+  .sidebar_close {
+    width: 280px;
+    transform: translateX(-280px);
+
+    .menuName,
+    .sidebarFooter_LogoutName,
+    .sidebarFooter_LogoutPosition,
+    .sidebarFooter_LogoutVersion {
+      display: block;
+    }
+
+    .menuUrl {
+      justify-content: flex-start;
+    }
+
+    .sidebarMenu .menuHeaderPareng {
+      justify-content: space-between;
+    }
+
+    .sidebarFooter_Logout {
+      justify-content: space-between;
+      border: 1px solid $color-grey-outline;
+      padding: 16px;
+    }
+  }
+
+  .sidebarMenu {
+    height: calc(100vh - 175px);   
+  }
+
+  .page_content {
+    width: 100%;
+  }
+}

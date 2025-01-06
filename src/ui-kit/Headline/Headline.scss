@@ -1,0 +1,34 @@
+@import 'ui-kit/styles';
+
+.headline {
+  align-items: left;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+
+  color: $color-primary-pressed;
+
+  @include min-width(xsmall) {
+    flex-direction: row;
+    align-items: center;
+  }
+  &__titlesmall {
+    @include inter-24-semibold;
+  }
+
+  &__titlemedium {
+    @include inter-28-semibold;
+  }
+
+  &__titlebig {
+    @include inter-32-bold;
+  }
+
+  &__primaryRight {
+    display: flex;
+    flex-direction: column;
+    @include min-width(xsmall) {
+      flex-direction: row;
+    }
+  }
+}

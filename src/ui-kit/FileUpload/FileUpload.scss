@@ -1,0 +1,167 @@
+@import 'ui-kit/styles';
+
+.conciseFile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: $color-primary-surface;
+  border: 1px dashed $color-primary-outline;
+  border-radius: 8px;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+  text-align: center;
+  &-none {
+    display: none;
+  }
+  
+  &-text {
+    @include inter-14-regular;
+    color: $color-primary;
+    &-max {
+      @include inter-12-regular;
+      color: $color-grey-placeholder;
+    }
+  }
+  &-icon {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    svg {
+      path {
+        stroke: $color-primary;
+      }
+    }
+  }
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+    &-item {
+      border: 1px solid $color-grey-outline;
+      border-radius: 8px;
+      padding: 16px;
+      width: 299.2px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      &-upper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &-name {
+          @include inter-14-bold;
+          max-width: 200px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &-size {
+          @include inter-12-regular;
+          color: $color-grey-placeholder;
+        }
+      }
+      &-lower {
+        @include inter-12-regular;
+        color: $color-success;
+      }
+    }
+  }
+
+  &Over {
+    background-color: $color-primary-hovered;
+    border: 0;
+    .conciseFile {
+      &-text {
+        color: $color-main-white;
+        &-max {
+          color: $color-main-white;
+        }
+      }
+      &-icon {
+        svg {
+          path {
+            stroke: $color-main-white;
+          }
+        }
+      }
+    }
+  }
+  &Disabled {
+    pointer-events: none;
+    background-color: $color-grey-disabled;
+    border: 1px dashed #AAD6FF;
+    .conciseFile {
+      &-text {
+        color: $color-main-white;
+        &-max {
+          color: $color-main-white;
+        }
+      }
+      &-icon {
+        svg {
+          path {
+            stroke: $color-main-white;
+          }
+        }
+      }
+    }
+  }
+
+  &Input {
+    border: 1px solid $color-grey-outline;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 348px;
+    height: 42px !important;
+    gap: 0px !important;
+    &-text {
+      @include inter-12-medium;
+      padding: 12px 0 12px 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      &-grey {
+        color: $color-grey-placeholder;
+      }
+      &-black {
+        color: $color-main-black;
+        width: 210px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    &-icon {
+      cursor: pointer;
+      svg path {
+        fill: $color-danger;
+      }
+    }
+    &-button {
+      @include inter-12-medium;
+      cursor: pointer;
+      @include themify($themes) {
+  background-color: themed('backgroundComponent');
+}
+      border-left: 1px solid $color-grey-outline;
+      border-radius: 0 8px 8px 0;
+      padding: 11px;
+    }
+  }
+  &Complex {
+    &-text {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $color-grey-placeholder;
+      @include inter-10-regular;
+    }
+  }
+}

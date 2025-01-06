@@ -1,0 +1,158 @@
+@import 'ui-kit/styles';
+
+.conciseTabs {
+  // Vertical Styling
+  &__vertical {
+    display: flex;
+    flex-direction: row;
+    .conciseTabsContent {
+      margin: 0;
+      width: 100%;
+    }
+    .conciseTabsTitle {
+      display: flex;
+      flex-direction: column;
+      margin-right: 24px;
+      gap: 12px;
+      &Item {
+        padding: 8px 0px 8px 20px;
+        border-left: 2px solid transparent;
+        border-bottom: 0px !important;
+      }
+    }
+    .tabActive {
+      border-left: 2px solid $color-primary;
+    }
+  }
+
+  &Title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 24px;
+    &Item {
+      cursor: pointer;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      height: max-content;
+      width: max-content;
+      border-radius: 8px;
+      align-self: center;
+      border-bottom: 2px solid transparent;
+    }
+  }
+
+  &__leftIcon {
+    margin-left: -4px;
+    &Center {
+      margin-left: 0;
+    }
+  }
+
+  &__rightIcon {
+    margin-right: -4px;
+    &Center {
+      margin-right: 0;
+    }
+  }
+
+  &__small {
+    @include inter-14-medium;
+  }
+
+  &__large {
+    @include inter-16-medium;
+  }
+  &__tabs.tabActive {
+    border-radius: 0px;
+    border-bottom-color: $color-primary;
+    border-bottom: 2px solid $color-primary;
+  }
+
+  &__navigation.tabActive {
+    background-color: $color-primary-surface;
+  }
+  &__button {
+    padding: 10px 16px !important;
+    // border-right: 1px solid $color-grey-outline;
+    &:nth-last-child(1) {
+      border: 0;
+    }
+  }
+  &__button.tabActive {
+    padding: 10px 16px;
+    background-color: $color-primary-surface;
+    border-radius: 0;
+  }
+
+  // Number Style
+  &__number {
+    padding: 10px !important;
+  }
+  &__number.tabActive {
+    background-color: $color-primary-surface;
+  }
+
+  // Navigation Style
+  &__navigation {
+    padding: 8px 12px;
+  }
+  &__navigation.conciseTabs__small {
+    padding: 8px 12px;
+  }
+  &__navigation.conciseTabs__medium {
+    padding: 8px 12px;
+  }
+  &__navigation.conciseTabs__big {
+    padding: 8px 12px;
+  }
+  &__navigation.tabActive {
+    padding: 8px 12px;
+    background-color: $color-primary-surface;
+  }
+
+  // Tabs Style
+  .conciseTabs__tabs {
+    padding-bottom: 8px;
+  }
+  .conciseTabs__tabs.conciseTabs__small {
+    padding-bottom: 8px;
+  }
+  .conciseTabs__tabs.conciseTabs__big {
+    padding-bottom: 8px;
+  }
+
+  &Content {
+    margin: 24px 0px;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid $color-primary;
+  }
+  &__small {
+    padding: 8px 0px;
+    @include inter-14-medium;
+  }
+  &__medium {
+    padding: 8px 0px;
+    @include inter-16-medium;
+  }
+  &__large {
+    padding: 8px 0px;
+    @include inter-18-medium;
+  }
+
+  svg path {
+    @include themify($themes) {
+      fill: themed('colorPath');
+    }
+  }
+}
+
+.tabActive {
+  color: $color-primary;
+  svg path {
+    fill: $color-primary !important;
+  }
+}

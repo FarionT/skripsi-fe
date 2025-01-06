@@ -1,0 +1,140 @@
+$color-primary-wireframe: #667080;
+$color-primary-wireframe-outline: #D9D9D9;
+
+$color-secondary-wireframe: #9BA5B7;
+
+$color-grey-wireframe: #545F71;
+
+$color-primary: #33CCFF;
+$color-primary-pressed: #02648A;
+$color-primary-hovered: #55adff;
+$color-primary-outline: #B0D1E9;
+$color-primary-surface: #E6F0F8;
+$color-primary-focused: rgba(90, 133, 244, 0.2); /* #5A85F4, 20% */
+
+$color-secondary: #5a85f4;
+$color-secondary-pressed: #4b6fcb;
+$color-secondary-hovered: #91aef8;
+$color-secondary-outline: #c8d6fb;
+$color-secondary-surface: #dee7fd;
+$color-secondary-focused: rgba(90, 133, 244, 0.2); /* #5A85F4, 20% */
+
+$color-tertiary: #D9D9D9;
+
+$color-success: #00BA34;
+$color-success-pressed: #3d955b;
+$color-success-hovered: #92eab0;
+$color-success-outline: #c9f4d8;
+$color-success-surface: #CCF1D6;
+$color-success-focused: rgba(92, 223, 137, 0.2); /* #5CDF89, 20% */
+
+$color-warning: #f98600;
+$color-warning-pressed: #7d4300;
+$color-warning-hovered: #fbae55;
+$color-warning-outline: #fdd7aa;
+$color-warning-surface: #fee7cc;
+$color-warning-focused: rgba(249, 134, 0, 0.2); /* #FFBD3C33 */
+
+$color-danger-icon: #B21523;
+$color-danger: #e92c2c;
+$color-danger-pressed: #741616;
+$color-danger-hovered: #f07272;
+$color-danger-outline: #e92c2c;
+$color-danger-surface: #fbd5d5;
+$color-danger-focused: rgba(255, 67, 67, 0.2); /* #FFBD3C33 */
+
+$color-main-black: #353535;
+$color-main-white: #ffffff;
+$color-dark-black: #000000;
+$color-dark-transparent: #0000001f;
+
+$color-grey-placeholder: #B5B5B5;
+$color-grey-outline: #d5d5d5;
+$color-grey-outline-transparent: rgba(213, 213, 213, 0.3);
+$color-grey-disabled: #e5e5e5;
+$color-grey-background: #f5f5f5;
+
+$color-tags-gray: #d5d5d5;
+$color-tags-primary: $color-primary-surface;
+$color-tags-green: #effbe1;
+$color-tags-cyan: #ebfbfc;
+$color-tags-purple: #ece8ff;
+$color-tags-pink: #fcebf3;
+$color-tags-orange: #fff0e8;
+
+$color-tagsText-gray: #5b5f6f;
+$color-tagsText-primary: $color-primary;
+$color-tagsText-green: #86c833;
+$color-tagsText-cyan: #49c7cf;
+$color-tagsText-purple: #412d8f;
+$color-tagsText-pink: #e0438f;
+$color-tagsText-orange: #d8733a;
+
+$color-weekdaysched-primary: #BEE9E8;
+$color-weekdaysched-pressed: #687E7D;
+$color-weekendsched-primary: #62B6CB;
+$color-weekendsched-pressed: #3B646F;
+$color-specialsched-primary: #FE938C;
+$color-specialsched-pressed: #89524E;
+
+$themes: (
+  light: (
+    sidebarBackgroudColor: $color-main-white,
+    inputBackgroundColor: $color-main-white,
+    toastBackgroundColor: $color-main-white,
+    bodyBackgroundColor: #E6F0F8,
+    bodyBackgroundColorNew: #eaeaea,
+    headerFooterBackground: $color-main-white,
+    textColor: $color-main-black,
+    negativeTextColor: #eff2f7,
+    toggleBackground: #dfe4ea,
+    disabledBackground: $color-grey-disabled,
+    readonlyBackground: #EEF1F4,
+    backgroundComponent: #f5f5f5,
+    colorComponent: #fff,
+    tableTHead: #F3F3F3,
+    tableOdd: #d0e9ff,
+    colorPath: #353535
+  ),
+  dark: (
+    sidebarBackgroudColor: $color-main-white,
+    inputBackgroundColor: $color-main-white,
+    toastBackgroundColor: $color-main-white,
+    bodyBackgroundColor: #E6F0F8,
+    bodyBackgroundColorNew: #eaeaea,
+    headerFooterBackground: $color-main-white,
+    textColor: $color-main-black,
+    negativeTextColor: #eff2f7,
+    toggleBackground: #dfe4ea,
+    disabledBackground: $color-grey-disabled,
+    readonlyBackground: #EEF1F4,
+    backgroundComponent: #f5f5f5,
+    colorComponent: #fff,
+    tableTHead: #F3F3F3,
+    tableOdd: #d0e9ff,
+    colorPath: #353535
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

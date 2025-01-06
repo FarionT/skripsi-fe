@@ -1,0 +1,62 @@
+@import 'ui-kit/styles';
+
+.concise-component-file {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+  &-subsubtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+  &-variations {
+    @include inter-18-medium;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+  &-bg-grey {
+    background-color: $color-grey-background;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  &-bg-white {
+    background-color: $color-main-white;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  &-bg-orientation {
+    background-color: $color-grey-background;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 44px 100px;
+    gap: 24px;
+  }
+  &-variants {
+    @include inter-20-regular;
+    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+}

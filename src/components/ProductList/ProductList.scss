@@ -1,0 +1,27 @@
+@import 'ui-kit/styles';
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+  @include min-width(small) {
+    gap: 24px;
+  }
+  &Item {
+    grid-column: span 6 / span 6;
+    @include min-width(small) {
+      grid-column: span 4 / span 4;
+    }
+    @include min-width(medium) {
+      grid-column: span 3 / span 3;
+    }
+  }
+  &__title {
+    @include inter-40-bold;
+    margin-bottom: 24px;
+  }
+  &__desc {
+    @include inter-18-regular;
+    margin-bottom: 24px;
+  }
+}

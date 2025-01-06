@@ -1,0 +1,83 @@
+@import 'ui-kit/styles';
+
+.concise-component-notifBadge {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+
+  &-text {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+  }
+
+  &-bg {
+    &-grey {
+      background-color: #F5F5F5;
+      padding: 20px 100px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  
+    &-variant {
+      background-color: #F5F5F5;
+      padding: 20px 100px;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+  }
+
+  &-variant {
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    &-status {
+      @include inter-16-medium;
+      margin-top: 20px;
+      justify-self: flex-end;
+    }
+  
+    &-number {
+      @include inter-16-medium;
+      margin-top: 32px;
+      justify-self: flex-end;
+    }
+  }
+
+  &-status {
+    @include inter-20-medium;
+    margin-bottom: 24px;
+  }
+
+  &-state {
+    @include inter-18-medium;
+    margin-bottom: 24px;
+  }
+}

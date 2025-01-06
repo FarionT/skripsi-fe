@@ -1,0 +1,141 @@
+@import 'ui-kit/styles';
+
+.concise-component-alert {
+  &-container {
+    padding: 58px 40px;
+  }
+
+  &-title {
+    @include inter-32-semibold;
+    margin-bottom: 48px;
+  }
+
+  &-subtitle {
+    @include inter-20-medium;
+    margin-bottom: 8px;
+  }
+
+  &-subsubtitle {
+    @include inter-18-medium;
+    margin-top: 48px;
+  }
+
+  &-text {
+    @include inter-16-regular;
+    margin-bottom: 56px;
+  }
+
+  &-desc {
+    @include inter-16-regular;
+    margin-bottom: 24px;
+    &-sec {
+      @include inter-14-regular;
+      margin-bottom: 56px;
+      margin-top: 48px;
+    }
+    &-text {
+      @include inter-16-regular;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
+  }
+
+  &-bg {
+    &-grey {
+      margin-top: 48px;
+      margin-bottom: 48px;
+      background-color: #f5f5f5;
+      padding: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: row;
+      &-col {
+        margin-top: 48px;
+        margin-bottom: 48px;
+        background-color: #f5f5f5;
+        padding: 24px;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+    }
+
+    &-white {
+      background-color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &-size {
+      background-color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      width: 500px;
+    }
+  }
+
+  &-size {
+    &-item {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      justify-content: space-around;
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 18px;
+    align-items: center;
+    &-text {
+      @include inter-14-semibold;
+    }
+  }
+
+  &-heading {
+    @include inter-24-medium;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+
+  &-truncation {
+    @include inter-32-medium;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    &-text {
+      @include inter-20-medium;
+      margin-top: 48px;
+    }
+  }
+
+  &-size {
+    display: flex;
+    flex-direction: row;
+    &-text {
+      @include inter-16-medium;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 275px;
+    }
+  }
+
+  &-item-text {
+    @include inter-16-medium;
+  }
+}

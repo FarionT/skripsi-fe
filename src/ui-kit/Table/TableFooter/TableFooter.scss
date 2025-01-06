@@ -1,0 +1,69 @@
+@import 'ui-kit/styles';
+
+.conciseTableFooter {
+  @include inter-12-regular;
+  min-height: 36px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  @include min-width(xsmall) {
+    flex-direction: row;
+  }
+  align-items: center;
+  justify-content: space-between;
+  // border: 1px solid $color-grey-outline;
+  border-radius: 0 0 8px 8px;
+  @include themify($themes) {
+    color: themed('textColor');
+  }
+  .leftbig {
+    padding: 12px;
+  }
+  .leftsmall {
+    padding: 9px;
+  }
+  .concisePaginationRight {
+    display: flex;
+    &Button {
+      @include inter-12-regular;
+      @include themify($themes) {
+        color: themed('textColor');
+        svg path {
+          fill: $color-primary;
+        }
+      }
+      span {
+        font-weight: 400 !important;
+      }
+      &:hover {
+        color: $color-primary;
+        background-color: $color-primary-surface;
+        border-radius: 8px;
+        svg path {
+          fill: $color-primary;
+        }
+      }
+    }
+    &Button.Button__disabled {
+      svg path {
+        fill: #e5e5e5 !important;
+      }
+    }
+    &Active {
+      color: $color-primary !important;
+      background-color: $color-primary-surface !important;
+      border-radius: 8px;
+    }
+  }
+  .big {
+    height: 42px;
+    width: 42px;
+  }
+  .small {
+    height: 36px;
+    width: 36px;
+  }
+  .nextBack {
+    width: auto;
+  }
+}

@@ -26,7 +26,7 @@
   height: 100vh;
   padding: 32px 24px;
   transition: all 0.5s ease;
-
+  border-right: 1px solid $color-grey-outline;
   @include themify($themes) {
     background-color: themed('sidebarBackgroudColor');
     color: themed('textColor');

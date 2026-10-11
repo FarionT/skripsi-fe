@@ -123,7 +123,7 @@ const JadwalTugasDetail = () => {
   // separate coordinator and prodeacons
   useEffect(() => {
     const tempProdeaconList = prodeacons.map((item: any) => ({
-      label: item.user_registration_number + ' - ' + item.full_name,
+      label: item.user_registration_number + ' - ' + item.full_name + ' - ' + item.status,
       value: item.id,
     }))
 
@@ -131,7 +131,7 @@ const JadwalTugasDetail = () => {
 
     const tempProdeaconListFilter = prodeacons.map((item: any) => ({
       id: item.id,
-      title: item.user_registration_number + ' - ' + item.full_name,
+      title: item.user_registration_number + ' - ' + item.full_name + ' - ' + item.status,
     }))
 
     setFilterOption([
@@ -146,7 +146,7 @@ const JadwalTugasDetail = () => {
     const tempProdeaconCoordinatorList = prodeacons
       .filter((item: any) => item.mass_coordination_flag)
       .map((item: any) => ({
-        label: item.user_registration_number + ' - ' + item.full_name,
+        label: item.user_registration_number + ' - ' + item.full_name + ' - ' + item.mass_coordination_type,
         value: item.id,
       }))
 

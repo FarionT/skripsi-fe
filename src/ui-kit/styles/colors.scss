@@ -5,14 +5,14 @@ $color-secondary-wireframe: #9BA5B7;
 
 $color-grey-wireframe: #545F71;
 
-$color-primary: #33CCFF;
-$color-primary-pressed: #02648A;
-$color-primary-hovered: #55adff;
-$color-primary-outline: #B0D1E9;
-$color-primary-surface: #E6F0F8;
+$color-primary: #009EDB;
+$color-primary-pressed: #03729d;
+$color-primary-hovered: #0390c8;
+$color-primary-outline: #b2e1f3;
+$color-primary-surface: #dcf4fd;
 $color-primary-focused: rgba(90, 133, 244, 0.2); /* #5A85F4, 20% */
 
-$color-secondary: #5a85f4;
+$color-secondary: #264aa4;
 $color-secondary-pressed: #4b6fcb;
 $color-secondary-hovered: #91aef8;
 $color-secondary-outline: #c8d6fb;
@@ -51,7 +51,7 @@ $color-dark-transparent: #0000001f;
 $color-grey-placeholder: #B5B5B5;
 $color-grey-outline: #d5d5d5;
 $color-grey-outline-transparent: rgba(213, 213, 213, 0.3);
-$color-grey-disabled: #e5e5e5;
+$color-grey-disabled: #c6c6c6;
 $color-grey-background: #f5f5f5;
 
 $color-tags-gray: #d5d5d5;
@@ -82,14 +82,14 @@ $themes: (
     sidebarBackgroudColor: $color-main-white,
     inputBackgroundColor: $color-main-white,
     toastBackgroundColor: $color-main-white,
-    bodyBackgroundColor: #E6F0F8,
+    bodyBackgroundColor: $color-main-white,
     bodyBackgroundColorNew: #eaeaea,
     headerFooterBackground: $color-main-white,
     textColor: $color-main-black,
     negativeTextColor: #eff2f7,
     toggleBackground: #dfe4ea,
     disabledBackground: $color-grey-disabled,
-    readonlyBackground: #EEF1F4,
+    readonlyBackground: $color-grey-disabled,
     backgroundComponent: #f5f5f5,
     colorComponent: #fff,
     tableTHead: #F3F3F3,
@@ -107,7 +107,7 @@ $themes: (
     negativeTextColor: #eff2f7,
     toggleBackground: #dfe4ea,
     disabledBackground: $color-grey-disabled,
-    readonlyBackground: #EEF1F4,
+    readonlyBackground: $color-grey-disabled,
     backgroundComponent: #f5f5f5,
     colorComponent: #fff,
     tableTHead: #F3F3F3,

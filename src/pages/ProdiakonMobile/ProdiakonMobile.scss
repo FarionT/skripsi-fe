@@ -4,7 +4,7 @@
   .prodiakon-mobile-header {
     display: flex;
     align-items: center;
-
+    background-color: $color-primary-surface;
     height: 50px;
     padding: 0 16px;
 
@@ -69,7 +69,7 @@
     .conciseTabsContent {
       border: 0px;
       border-radius: 0px;
-
+      background-color: $color-primary-surface;
       height: calc(100vh - 60px);
       margin: 0px;
       padding: 0px;
@@ -152,6 +152,7 @@
   gap: 8px; 
   height: auto;
   padding: 16px 0px 12px 25px;
+  background-color: $color-primary-surface;
 
   .jadwal-tugas-date {
     background-color: $color-primary;
@@ -181,7 +182,16 @@
     height: auto;
     max-height: calc(100vh - 525px);
     overflow-y: auto;
-
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 8px;
+      background-color: #aaa;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888887;
+      border-radius: 4px;
+    }
     padding-right: 25px;
     .jadwal-tugas-item {
       cursor: pointer;
@@ -198,13 +208,13 @@
       }
 
       &.mass-weekday {
-        border: 2px solid rgb(190, 233, 232);
-        background-color: rgba(190, 233, 232, 0.2);
+        border: 2px solid #85c2d8;
+        background-color: #b6ebff;
       }
 
       &.mass-weekend {
-        border: 2px solid rgb(98, 182, 203);
-        background-color: rgba(98, 182, 203, 0.2);
+        border: 2px solid #4a94af;
+        background-color: #91e0fd;
       }
 
       &.mass-special {
@@ -222,6 +232,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        
 
         .jadwal-tugas-mass-name {
           @include inter-14-bold;
@@ -255,6 +266,16 @@
   .jadwal-tugas-detail-petugas {
     max-height: calc(100vh - 425px);
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 8px;
+      background-color: #aaa;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888887;
+      border-radius: 4px;
+    }
   }
 
   .jadwal-tugas-detail-header {

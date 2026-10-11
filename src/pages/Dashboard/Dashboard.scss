@@ -1,6 +1,7 @@
 @import 'ui-kit/styles';
 
 .dashboard-data {
+  background-color: $color-primary-surface !important;
   .dashboard-content {
     .dashboard-title,
     .dashboard-subtitle {
@@ -13,6 +14,7 @@
       }
 
       .dashboard-item {
+        background-color: $color-primary-outline !important;
         &.dashboard-item-status {
           flex: unset;
           min-width: unset;

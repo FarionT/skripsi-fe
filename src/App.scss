@@ -11,6 +11,7 @@
     color: themed('textColor');
   }
 
+  
   .app-version {
     @include inter-12-regular;
     color: $color-grey-placeholder;
@@ -25,7 +26,7 @@
     padding: 40px;
 
     .data {
-      background-color: $color-main-white;
+      background-color: $color-primary-surface;
       border: 1px solid $color-primary-outline;
       border-radius: 8px;
 
@@ -75,6 +76,8 @@
         max-width: 768px;
         
         .filter-item {
+          background-color: $color-main-white;
+          border-radius: 8px;
           width: 100%;
 
           .FormField {

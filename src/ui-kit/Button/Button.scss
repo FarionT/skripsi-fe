@@ -530,7 +530,7 @@
       @include themify($themes) {
         color: themed('textColor');
       }
-      background-color: transparent;
+      background-color: $color-main-white;
       border: 1px solid $color-grey-outline;
       svg path {
         fill: $color-main-black;

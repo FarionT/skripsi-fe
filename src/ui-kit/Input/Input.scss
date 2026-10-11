@@ -93,6 +93,7 @@
     @include themify($themes) {
       background-color: themed('readonlyBackground') !important;
     }
+    pointer-events: none;
   }
 
   &::placeholder {

@@ -40,7 +40,7 @@ const MenuItem = ({ menuList, activePath }: { menuList: TMenuType; activePath: s
   const dispatch = useDispatch()
 
   return (
-    <li id={`id-${menuList.name}`} key={menuList.name} onClick={menuList.action}>
+    <li id={`id-${menuList.name}`} key={menuList.name} onClick={menuList.action} title={menuList.name}>
       {menuList.href ? (
         <Link
           to={menuList.href}
@@ -106,8 +106,9 @@ const DropdownMenu = ({
             activePath.startsWith(menuList.href ?? '') ||
             menuList.child?.some((child) => activePath.startsWith(child.href ?? '')),
         })}
+        title={menuList.name}
       >
-        <div className='menuUrl-iconLeft'>
+        <div className='menuUrl-iconLeft' >
           {menuList.icon && <Icon type={menuList.icon} />}
           <div className='menuName-Parent'>
             <div className='menuName'>{menuList.name}</div>

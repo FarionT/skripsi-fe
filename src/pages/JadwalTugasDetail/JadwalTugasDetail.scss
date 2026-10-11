@@ -130,6 +130,16 @@
 .fc .fc-daygrid-day-frame {
   max-height: 75px;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 8px;
+    background-color: #aaa;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888887;
+    border-radius: 4px;
+  }
 }
 
 .fc-theme-standard .fc-scrollgrid,
@@ -166,8 +176,8 @@
 }
 
 .custom-event-weekday {
-  border: 2px solid rgb(190, 233, 232);
-  background-color: rgba(190, 233, 232, 0.2);
+  border: 2px solid #85c2d8;
+  background-color: #b6ebff;
 }
 
 .custom-event-weekday:focus {
@@ -176,8 +186,8 @@
 }
 
 .custom-event-weekend {
-  border: 2px solid rgb(98, 182, 203);
-  background-color: rgba(98, 182, 203, 0.2);
+  border: 2px solid #4a94af;
+  background-color: #91e0fd;
 }
 .custom-event-weekend:focus {
   border: 2px solid rgb(59, 100, 111);
@@ -221,6 +231,16 @@
     flex-wrap: wrap;
     max-height: 75px;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 8px;
+      background-color: #aaa;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888887;
+      border-radius: 4px;
+    }
   }
 
   .concise-input[type='checkbox']:checked {

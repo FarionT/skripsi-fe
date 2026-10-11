@@ -4,9 +4,9 @@
   .prodeacon-scheduling-content {
     .prodeacon-scheduling-item {
       cursor: pointer;
-
+      background-color: $color-primary-outline !important;
       &:hover {
-        background-color: #006CB833 !important;
+        background-color: #99d0e6 !important;
       }
 
       .church-name {

@@ -162,14 +162,14 @@ const Login = () => {
               password Anda.
             </p>
           </div>
-          <div className='app-version'>V {packageJson.version}</div>
+          {/* <div className='app-version'>V {packageJson.version}</div> */}
         </div>
-        <div className='powered-by'>
+        {/* <div className='powered-by'>
           Powered by:{' '}
           <div className='powered-by-logo'>
             <Link to={'https://concise.co.id/'} target='_blank' rel="noreferrer"><img src={mainLogo} alt='Logo Concise' /></Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
